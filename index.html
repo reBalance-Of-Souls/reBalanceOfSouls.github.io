@@ -355,6 +355,153 @@
     margin-left: 8px;
   }
 
+  /* ── Version tabs ── */
+  .version-nav {
+    background: #111;
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 24px 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .version-tab {
+    background: none;
+    border: none;
+    color: #999;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 8px 22px 10px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+  }
+  .version-tab:hover { color: #fff; }
+  .version-tab.active { color: #fff; border-bottom-color: #e63030; }
+  .version-tab .tab-sub {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    color: #777;
+    letter-spacing: 0.5px;
+    text-transform: none;
+  }
+  .version-panel { display: none; }
+  .version-panel.active { display: block; }
+
+  /* ── Patch banner ── */
+  .patch-banner {
+    background: #0a0a0a;
+    color: #fff;
+    border-left: 4px solid #e63030;
+    padding: 18px 20px;
+    margin: 8px 0 28px;
+    border-radius: 2px;
+  }
+  .patch-banner h2 {
+    font-size: 22px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .patch-banner .patch-date { color: #888; font-size: 12.5px; margin-top: 4px; }
+
+  /* ── Highlight cards ── */
+  .highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 18px 0 8px;
+  }
+  @media (max-width: 640px) { .highlights { grid-template-columns: 1fr; } }
+  .highlight-card {
+    background: #0a0a0a;
+    color: #ccc;
+    border: 1px solid #222;
+    border-top: 3px solid #e63030;
+    border-radius: 4px;
+    padding: 16px 18px;
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+  .highlight-card .hl-kicker {
+    color: #e63030;
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .highlight-card h3 {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  /* ── Compare toggle ── */
+  .compare-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #f0f0f0;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin: 26px 0 6px;
+    position: sticky;
+    top: 70px;
+    z-index: 40;
+  }
+  @media (max-width: 640px) { .compare-bar { position: static; } }
+  .compare-bar .compare-label {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555;
+  }
+  .compare-btn {
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #444;
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  .compare-btn:hover { border-color: #e63030; }
+  .compare-btn.active { background: #e63030; border-color: #e63030; color: #fff; }
+  .compare-hint { font-size: 12px; color: #777; flex-basis: 100%; }
+
+  .cmp-vanilla { display: none; }
+  #panel-v11.show-vanilla .cmp-v10 { display: none; }
+  #panel-v11.show-vanilla .cmp-vanilla { display: block; }
+
+  /* ── Reverted entries (vanilla view) ── */
+  .tag-reverted {
+    background: #eee;
+    color: #666;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  ul.changes li.reverted-line { color: #999; }
+
 </style>
 </head>
 <body>
@@ -367,7 +514,7 @@
 
 <!-- ════════════════ HERO ════════════════ -->
 <div class="hero">
-  <div class="hero-tag">Patch Notes</div>
+  <div class="hero-tag">Patch Notes — V1.1 Part 1 Out Now</div>
   <img class="hero-logo" src="logo.png" alt="BLEACH: reBALANCE of Souls">
   <div class="hero-meta">
     <span>Written by the Community</span>
@@ -383,10 +530,10 @@
 
 <!-- ════════════════ TRAILER ════════════════ -->
 <div class="trailer-strip">
-  <div class="trailer-title">Watch the <span>Trailer</span></div>
+  <div class="trailer-title">Watch the <span id="trailer-title-version">V1.1</span> <span id="trailer-title-label">Teaser</span></div>
   <div class="video-wrap">
-    <video preload="none" poster="black-poster.jpg" playsinline>
-      <source src="trailer.mp4" type="video/mp4">
+    <video id="trailer-video" preload="none" poster="black-poster.jpg" playsinline>
+      <source id="trailer-source" src="teaser.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <button class="vid-play" aria-label="Play trailer"></button>
@@ -394,6 +541,19 @@
 </div>
 
 <script>
+  // Maps a version panel id to the video file that should play in the trailer strip
+  var versionVideoMap = {
+    'panel-v11': 'teaser.mp4',
+    'panel-v10': 'trailer.mp4'
+  };
+
+  // Maps a version panel id to the version number + label ("Teaser"/"Trailer")
+  // shown above the video — kept in sync with versionVideoMap.
+  var versionTitleMap = {
+    'panel-v11': { version: 'V1.1', label: 'Teaser' },
+    'panel-v10': { version: 'V1.0', label: 'Trailer' }
+  };
+
   document.querySelectorAll('.video-wrap').forEach(function (wrap) {
     var video = wrap.querySelector('video');
     var btn = wrap.querySelector('.vid-play');
@@ -406,10 +566,589 @@
       btn.classList.remove('hidden');
     });
   });
+
+  // Swap the trailer strip's video source to match whichever version panel is active
+  function setTrailerVideo(panelId) {
+    // Update the "Watch the Vx Y" title regardless of whether the video source changes
+    var titleInfo = versionTitleMap[panelId];
+    if (titleInfo) {
+      var versionEl = document.getElementById('trailer-title-version');
+      var labelEl = document.getElementById('trailer-title-label');
+      if (versionEl) versionEl.textContent = titleInfo.version;
+      if (labelEl) labelEl.textContent = titleInfo.label;
+    }
+
+    var src = versionVideoMap[panelId];
+    if (!src) return;
+    var video = document.getElementById('trailer-video');
+    var source = document.getElementById('trailer-source');
+    if (!video || !source) return;
+    if (source.getAttribute('src') === src) return; // already showing the right video
+    video.pause();
+    video.controls = false;
+    source.setAttribute('src', src);
+    video.load(); // reload so the new source + poster take effect
+    var btn = video.parentElement.querySelector('.vid-play');
+    if (btn) btn.classList.remove('hidden');
+  }
 </script>
 
-<!-- ════════════════ CONTENT ════════════════ -->
-<div class="content">
+<!-- ════════════════ VERSION NAV ════════════════ -->
+<nav class="version-nav" aria-label="Patch version">
+  <button class="version-tab active" data-panel="panel-v11">V1.1 — Part 1<span class="tab-sub">Latest · July 2026</span></button>
+  <button class="version-tab" data-panel="panel-v10">V1.0<span class="tab-sub">Initial Release</span></button>
+</nav>
+
+<!-- ════════════════ V1.1 PART 1 CONTENT ════════════════ -->
+<div class="content version-panel active" id="panel-v11">
+
+  <div class="patch-banner">
+    <h2>Patch V1.1 — Part 1</h2>
+    <div class="patch-date">July 2026 · Balance changes, reworks &amp; the big online update</div>
+  </div>
+
+  <!-- ══ HIGHLIGHTS ══ -->
+  <div class="section-header">Patch Highlights</div>
+
+  <div class="highlights">
+    <div class="highlight-card">
+      <span class="hl-kicker">Online</span>
+      <h3>Patch vs Patch Online Play</h3>
+      Patch players can now face other Patch players online in <strong>Ranked</strong>, <strong>Free Battle</strong>, and <strong>Room Matches</strong>. On top of that, the region lock has been removed from Room Matches.
+    </div>
+    <div class="highlight-card">
+      <span class="hl-kicker">Launcher</span>
+      <h3>Bugs and Hotfixes</h3>
+      General Bugs and hotfixes for certain character with some balancing.
+    </div>
+    <div class="highlight-card">
+      <span class="hl-kicker">Rework</span>
+      <h3>Byakuya Awakening Rework</h3>
+      Byakuya's Awakening has been rebuilt around form-switching: swap between <strong>Senkei</strong> (melee) and <strong>Scattered State</strong> (ranged) mid-match. Full details in his entry below.
+    </div>
+    <div class="highlight-card">
+      <span class="hl-kicker">Rework</span>
+      <h3>Uryu's True DP</h3>
+      Uryu's Spiritual Pressure Move 2 is now a true DP — fully invincible for its entire duration, including the follow-up arrow — balanced by being more reactable and easier to punish on block.
+    </div>
+    <div class="highlight-card">
+      <span class="hl-kicker">Launcher</span>
+      <h3>Quick Launchers</h3>
+      New shortcuts let you instantly launch either the Community Patch or vanilla BRoS without opening the launcher first — a handy shortcut when you want to get into a match ASAP.
+    </div>
+  </div>
+
+  <!-- ══ COMPARE TOGGLE ══ -->
+  <div class="compare-bar">
+    <span class="compare-label">Compare against:</span>
+    <button class="compare-btn active" data-mode="v10">V1.0 Patch</button>
+    <button class="compare-btn" data-mode="vanilla">Vanilla Rebirth of Souls</button>
+    <span class="compare-hint">“V1.0” shows only what this update changed compared to the last V1.0 Patch. “Vanilla” shows every change currently active versus the unmodded game, merged across V1.0 and V1.1. Entries that are marked REVERTED are V1.0 changes that have been rolled back.</span>
+  </div>
+
+  <!-- ══ CHARACTER ADJUSTMENTS ══ -->
+  <div class="section-header">Character Adjustments and Changes</div>
+
+  <!-- BYAKUYA (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/byakuya.webp" alt="Byakuya Kuchiki" loading="lazy"></div><div class="char-header-info"><div class="char-name">Byakuya Kuchiki <span class="credit">Changes by Meri</span> <span class="tag-rework">REWORK</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Initial Stage]</div>
+    <ul class="changes">
+      <li>Scattered State SP1: blockstun reduced (32 → 17), going from plus on block to minus on block. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ This tool is a long-range instant whiff punish that combos. Being plus on block as well was overloaded, so its power has been toned down.</small></li>
+    </ul>
+
+    <div class="stage-label">[Awakening — Reworked]</div>
+    <ul class="changes">
+      <li>Byakuya can now switch between two forms during Awakening: <strong>Senkei</strong> (melee) and <strong>Scattered State</strong> (ranged). He starts his Awakening in Senkei. <span class="tag-rework">REWORK</span></li>
+    </ul>
+
+    <div class="stage-label">[Awakening — Senkei]</div>
+    <ul class="changes">
+      <li>Identical to his base sword form, with damage improved on all abilities. <span class="tag-buff">BUFF</span></li>
+      <li>Heavy range slightly increased. <span class="tag-buff">BUFF</span></li>
+      <li>New Signature Move: Senka. A medium-range command grab. <span class="tag-rework">REWORK</span><br>
+          <small style="color:#777">→ combos into Hoho follow-up, Yellow Reverse, and SP1.</small></li>
+      <li>Senka: movement speed reduced by 25%. <span class="tag-nerf">NERF</span></li>
+      <li>Senka: range reduced by roughly half — travel distance, failed-move distance, and limit length all cut down. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ can no longer be hold-dashed across half the screen for a sneaky command grab.</small></li>
+      <li>Senka: can no longer be canceled into on whiff, though it can still be canceled into on block or on hit. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span><br>
+          <small style="color:#777">→ hitstun increased by 1 frame so it stays consistently plus on hit.</small></li>
+      <li>SP1: same as base form, but now swaps Byakuya into Scattered State for 20 seconds before wearing off. <span class="tag-rework">REWORK</span></li>
+      <li>SP1: hitstun reduced (44 → 35) and no longer combos into Scattered State SP1 afterward. <span class="tag-nerf">NERF</span></li>
+      <li>SP1: removed Byakuya's ability to press Heavy right away without moving first. <span class="tag-nerf">NERF</span></li>
+      <li>SP2: can no longer be combo'd into afterward. <span class="tag-nerf">NERF</span></li>
+      <li>Hakugeki is identical across both forms.</li>
+    </ul>
+
+    <div class="stage-label">[Awakening — Scattered State]</div>
+    <ul class="changes">
+      <li>Identical to his zoner form; lasts 20 seconds before reverting to Senkei. <span class="tag-rework">REWORK</span></li>
+      <li>Heavy 1 guard damage improved. <span class="tag-buff">BUFF</span></li>
+      <li>Heavy 1 guard damage reduced (390 → 240). <span class="tag-nerf">NERF</span></li>
+      <li>SP1: same as before, but now swaps Byakuya back into Senkei. <span class="tag-rework">REWORK</span></li>
+      <li>SP1: minimum damage per hit reduced (300 → 160). <span class="tag-nerf">NERF</span></li>
+      <li>SP2 can now combo without needing to cancel the animation. <span class="tag-buff">BUFF</span></li>
+    </ul>
+
+    <div class="stage-label">[Awakening — Common]</div>
+    <ul class="changes">
+      <li>SP2 swaps Byakuya's form in either state, and begins a combo. <span class="tag-rework">REWORK</span></li>
+      <li>Heavy 2 recovery decreased slightly. <span class="tag-buff">BUFF</span></li>
+      <li>Grab: position after a successful throw adjusted: <span class="tag-fix">FIX</span><br>
+          <small style="color:#777">→ Grab → Signature no longer whiffs.</small></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Initial Stage]</div>
+    <ul class="changes">
+      <li>Fixed a bug where Byakuya could hold-Grab Dash and cancel it into SP1. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>Light 3 (Sword Form): hitstun reduced <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span><br>
+          <small style="color:#777">→ removes an unintended infinite loop triggered by Strike Back.</small></li>
+      <li>Hoho Follow-up (Petals Down): removed his ability to continue into SP1 immediately after. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>Spiritual Pressure Move 2: timestop removed. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+          <small style="color:#777">→ prevents the timestop from "munching" inputs from the opponent that would have otherwise activated the counter.</small></li>
+      <li>SP2 counter collision angle improved for more reliable counter hit connections. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+      <li>Byakuya's arrival position after SP2 adjusted for aura purposes. <span class="tag-buff">AURA BUFF</span></li>
+      <li>Scattered State SP1: blockstun reduced (32 → 17), going from plus on block to minus on block. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ added in V1.1 — a long-range instant whiff punish that combos shouldn't also be plus on block.</small></li>
+    </ul>
+
+    <div class="stage-label">[Awakening — Reworked in V1.1]</div>
+    <ul class="changes">
+      <li>Byakuya can now switch between two forms during Awakening: <strong>Senkei</strong> (melee) and <strong>Scattered State</strong> (ranged). He starts his Awakening in Senkei. <span class="tag-rework">REWORK</span></li>
+      <li>Senkei: identical to his base sword form, with damage improved on all abilities and slightly increased Heavy range. <span class="tag-buff">BUFF</span></li>
+      <li>Senkei: new Signature Move (Senka) — a medium-range command grab that combos into Hoho follow-up, Yellow Reverse, and SP1. <span class="tag-rework">REWORK</span></li>
+      <li>Senkei: Senka's movement speed reduced by 25%, and its range cut by roughly half (travel distance, failed-move distance, and limit length all reduced) so it can no longer be hold-dashed across half the screen for a sneaky command grab. <span class="tag-nerf">NERF</span></li>
+      <li>Senkei: Senka can no longer be canceled into on whiff (block/hit cancels still work), with hitstun increased by 1 frame so it stays consistently plus on hit. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>Senkei: SP1 swaps Byakuya into Scattered State for 20 seconds before wearing off. <span class="tag-rework">REWORK</span></li>
+      <li>Senkei: SP1 hitstun reduced (44 → 35), no longer combos into Scattered State SP1 afterward, and removed Byakuya's ability to press Heavy right away without moving first. <span class="tag-nerf">NERF</span></li>
+      <li>Senkei: SP2 can no longer be combo'd into afterward. <span class="tag-nerf">NERF</span></li>
+      <li>Scattered State: identical to his zoner form; lasts 20 seconds, with Heavy 1 guard damage first improved, then reduced (390 → 240). SP1 swaps him back into Senkei, with its minimum damage per hit reduced (300 → 160). <span class="tag-rework">REWORK</span></li>
+      <li>Scattered State: SP2 can now combo without needing to cancel the animation. <span class="tag-buff">BUFF</span></li>
+      <li>SP2 swaps Byakuya's form in either state, and begins a combo. Hakugeki is identical across both forms. <span class="tag-rework">REWORK</span></li>
+      <li>Heavy 2 recovery decreased slightly. <span class="tag-buff">BUFF</span></li>
+      <li>Grab: position after a successful throw adjusted. <span class="tag-fix">FIX</span><br>
+          <small style="color:#777">→ Grab → Signature no longer whiffs against Yhwach.</small></li>
+    </ul>
+
+    <div class="stage-label">[Awakening — V1.0 adjustments]</div>
+    <ul class="changes">
+      <li><small style="color:#777">These V1.0 changes were made to the pre-rework Awakening kit and carry over where the corresponding moves still exist.</small></li>
+      <li>Heavy attack hitbox position moved out. Deadzone increased. Max range slightly increased. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>Spiritual Pressure Move 1: reverse regeneration removed from the second portion of the attack. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>Spiritual Pressure Move 2: timestop removed. Hitbox on the damage portion slightly expanded to reduce janky interactions. Counter hit improved. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+      <li>Hakugeki (Down and Up variants): movement distance increased. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+          <small style="color:#777">→ the in-combo Hakugeki now connects correctly.</small></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    The community has always been divided on Byakuya and how to properly balance him. His ability to zone unchecked left a lot feeling like he was just unfair or too strong, but nerfing too much of his kit would only gut the character. That's why Byakuya's Awakening has been rebuilt around form-switching: Senkei for melee, Scattered State for ranged, with SP1 and SP2 acting as the switches with SP2 even starts a combo on top of swapping. His new command-grab Signature allows him a much stronger mix-up tool that combos into hoho follow up, Yellow Reverse, or SP1. In base form, Scattered State SP1 was a long-range instant whiff punish that could combo while also being plus on block made it too strong of a move, so it is now minus.
+    <br><br>
+    A follow-up hotfix let Scattered State SP2 combo without cancelling its animation, restored Senka's ability to be canceled into on block and hit (only whiff cancels stay removed), and gave it +1 frame of hitstun so it remains consistently plus on hit. Senka's range was then found to still be too strong even accounting for the reduced cancel options — holding the dash could still cross roughly half the screen for a sneaky command grab — so its travel distance, failed-move distance, and limit length have all been cut by about half.
+  </div>
+
+  <!-- URYU (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/uryu.webp" alt="Uryu Ishida" loading="lazy"></div><div class="char-header-info"><div class="char-name">Uryu Ishida <span class="credit">Changes by Bergen</span> <span class="tag-rework">REWORK</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>SP2 is now a <strong>true DP</strong>: fully invincible for its entire duration. <span class="tag-buff">BUFF</span></li>
+      <li>SP2 made more reactable and easier to punish. <span class="tag-nerf">NERF</span></li>
+      <li>Fixed a bug where Uryu's Tilt follow-up would miss certain opponents in red HP. <span class="tag-fix">FIX</span></li>
+      <li>Fighting Spirit gain penalty outside Reishi Concentration State removed (was −20% in V1.0). <span class="tag-buff">BUFF</span></li>
+    </ul>
+
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Fighting Spirit gain bonus in Reishi Concentration State reduced: +100% → +25%. <span class="tag-nerf">NERF</span></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Spiritual Pressure Move 2 reworked from a counter into a <strong>true DP</strong> (Invincible Reversal): strikes from behind, deals more damage, and is fully invincible for its entire duration — including during the follow-up arrow. In exchange, it is reactable and easy to punish on block. <span class="tag-rework">REWORK</span></li>
+      <li class="reverted-line">Fighting Spirit gain from Light 1–3, Heavy 1–2, Tilt, Charged Tilt, Flash Step Follow-up, and Grab reduced by 20%. <span class="tag-reverted">REVERTED</span><br>
+          <small style="color:#999">→ V1.0 change removed in V1.1 — his Fighting Spirit gain outside Reishi Concentration is back to vanilla.</small></li>
+      <li>Fixed a bug where Uryu's Tilt follow-up would miss certain opponents in red HP. <span class="tag-fix">FIX</span></li>
+    </ul>
+
+    <div class="stage-label">[Initial Stage]</div>
+    <ul class="changes">
+      <li>SP2 (True DP): tracks the opponent slightly. Hitstun and guard stun significantly reduced to allow proper punishment. <span class="tag-rework">REWORK</span></li>
+    </ul>
+
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Fighting Spirit required to reach Sublimation increased by 50%. <span class="tag-nerf">NERF</span></li>
+      <li>SP1 Fighting Spirit gain doubled. <span class="tag-buff">BUFF</span></li>
+      <li>SP1 range increased to prevent dropping after Heavy 2 at max range. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+      <li>Light attack range slightly increased to match base light range. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+      <li>Signature Move in Reishi Concentration State: Fighting Spirit gain reduced by 50%. <span class="tag-buff">BUFF</span></li>
+      <li>Fighting Spirit gain in Reishi Concentration State for Heavy 1–2, Tilt, and Charged Tilt: +25%. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ was +100% in V1.0, reduced to +25% in V1.1.</small></li>
+      <li>SP2 (True DP): tracks the opponent, larger explosion radius, and increased damage. Recovery and guard stun reduced for easier punishing. <span class="tag-rework">REWORK</span></li>
+      <li>Flash Step follow-up on block fixed. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+          <small style="color:#777">→ no longer leaves Uryu unsafe.</small></li>
+    </ul>
+
+    <div class="stage-label">[Reawakening]</div>
+    <ul class="changes">
+      <li>Fighting Spirit required to enter Reawakening significantly increased (~285%). <span class="tag-nerf">NERF</span></li>
+      <li>Light attack range slightly increased to match base light range. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+      <li>Step speed slightly increased. <span class="tag-buff">BUFF</span></li>
+      <li>SP1 minimum guaranteed damage increased by ~48%. <span class="tag-buff">BUFF</span></li>
+      <li>SP1 range increased to prevent dropping after Heavy 2. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+      <li>Heavy 1 now homes in on the opponent. <span class="tag-buff">BUFF</span></li>
+      <li>Charged Tilt now homes in on the opponent. <span class="tag-buff">BUFF</span></li>
+      <li>Guard damage on Heavy 1, Heavy 2, Light 2, Light 3, Tilt, and Charged Tilt all increased by 10%. <span class="tag-buff">BUFF</span></li>
+      <li>SP2 (True DP): large explosion radius, damage redistributed for consistency. Guard damage reduced by 25%. <span class="tag-rework">REWORK</span></li>
+      <li>Flash Step follow-up on block fixed: same correction as Awakening. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    Uryu's SP2 now works as a genuine reversal: while it is active, he is fully invincible until the arrow is fired. The move was however made more reactable and significantly easier to punish with worse recovery. His Fighting Spirit was also rebalanced, alongside receiving some bug fixes.
+    <br><br>
+    <strong>Known Issue:</strong> SP2 currently grants Uryu his install even on block or whiff. A fix is being worked on and will (hopefully) arrive in Part 2.
+  </div>
+
+  <!-- YAMAMOTO (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/yamamoto.webp" alt="Shigekuni Genryusai Yamamoto" loading="lazy"></div><div class="char-header-info"><div class="char-name">Shigekuni Genryusai Yamamoto <span class="credit">Changes by Nilsix</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Spiritual Pressure Move 2: knockback on hit reduced: 5 → 0.2. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ Yamamoto can now combo after SP2 again with Light 1.</small></li>
+      <li>Spiritual Pressure Move 2: hitstun on the last hit reduced: 78 → 66. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ keeps the new follow-up limited to Light 1 instead of a full conversion.</small></li>
+    </ul>
+
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Tilt: Inferno gauge gain restored: 0.15 → 0.2. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ back to his vanilla burn gauge gain rate.</small></li>
+      <li>Signature Move  1: damage reduced: 1250 → 750. <span class="tag-nerf">NERF</span></li>
+      <li>Signature Move  2: damage reduced: 1500 → 1000. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ for reference: Signature 1 + Signature 2 against Bankai Ichigo dealt 3200 damage, but now deals 2300.</small></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Signature Move: fixed an issue where it could hit an opponent from behind. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>Spiritual Pressure Move 2: knockback and hitstun retuned (knockback 0.2, last-hit hitstun 66). <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ Yamamoto can only follow up with Light 1 after SP2 lands — vanilla allowed full combos.</small></li>
+    </ul>
+
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Tilt: Restored Yamamoto's original Special Flash Attack. <span class="tag-buff">BUFF</span></li>
+      <li class="reverted-line">Tilt: Inferno gauge gain reduced by 25%. <span class="tag-reverted">REVERTED</span><br>
+          <small style="color:#999">→ V1.0 change reverted in V1.1 — gain is back at the vanilla rate (0.2).</small></li>
+      <li>Spiritual Pressure Move 1 (Charged): damage reduced by 25%. <span class="tag-nerf">NERF</span></li>
+      <li>Signature Move 1: damage reduced: 1250 → 750 (−40%). <span class="tag-nerf">NERF</span></li>
+      <li>Signature Move 2: damage reduced: 1500 → 1000 (−33%). <span class="tag-nerf">NERF</span></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    V1.0 turned SP2 into a pure spacing tool; V1.1 gives him Light 1 instead as a middle ground, so landing it is rewarded without restoring his full combo damage. In exchange, his Awakening signature damage has been brought down: both Signature 1 and 2 hit noticeably less hard, while his Inferno gauge gain on Tilt returns to its vanilla values.
+  </div>
+
+  <!-- YORUICHI (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/yoruichi.webp" alt="Yoruichi Shihoin" loading="lazy"></div><div class="char-header-info"><div class="char-name">Yoruichi Shihoin <span class="credit">Changes by Nilsix</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>SP1 (Flashmaster): hitstun restored: 42 → 50. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ SP1 can now combo into Heavy again, and SP1 → Light 1 no longer whiffs against certain characters.</small></li>
+      <li>Heavy 1: damage scaling increased: 0.8 → 0.6. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ the next move after Heavy 1 now does 60% of its damage instead of 80%.</small></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Initial Stage]</div>
+    <ul class="changes">
+      <li>Fixed Flashmaster SP1 reverse generation. <span class="tag-fix">FIX</span></li>
+    </ul>
+
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Light 1 now tracks the opponent. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+          <small style="color:#777">→ Yoruichi can punish Flash Steps with Light 1.</small></li>
+      <li>Spiritual Pressure Move 2 timestop removed for consistency across all SP counters. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+    </ul>
+
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Forward Signature Move blockstun reduced by ~36%. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ Anken into forward dash is now unsafe on block.</small></li>
+      <li class="reverted-line">SP1 (Flashmaster): hitstun reduced by ~16%. <span class="tag-reverted">REVERTED</span><br>
+          <small style="color:#999">→ V1.0 change reverted in V1.1 — hitstun is back at 50, so SP1 combos into Heavy as in vanilla.</small></li>
+      <li>Heavy 1: damage scaling increased: 0.8 → 0.6. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ the next move after Heavy 1 does 60% of its damage instead of 80%.</small></li>
+      <li>Flash Step follow-up (last hit) hitstun reduced by ~14%. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ Flash Step follow-up → dash light oki is retained, but Yellow Reverse is no longer possible afterward.</small></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    An earlier hotfix experimented with reducing Flashmaster SP1's knockback to stop SP1 → Light 1 whiffing against certain characters, but the very last hit still whiffed against characters like Komamura and risked leaving the move in a bugged state. That experiment has been reverted in favor of restoring SP1's full hitstun, while the harsher Heavy 1 scaling keeps the resulting combo damage in check.
+  </div>
+
+  <!-- GIN (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/gin.webp" alt="Gin Ichimaru" loading="lazy"></div><div class="char-header-info"><div class="char-name">Gin Ichimaru <span class="credit">Changes by Nilsix</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Light 2: blockstun reduced: 28 → 25. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ removes a tech that gave Gin continuous pressure even against Tier 1 mashing. No longer possible against Tier 1–2 jabs, and REALLY hard against Tier 3.</small></li>
+      <li>Heavy 2 (last hit): hitstun reduced: 40 → 38. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ removes the Heavy 2 → Signature cancel → Dash Light infinite. The route still works during White Reverse — a loop, not an infinite — but the timing is tighter.</small></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Spiritual Pressure Move 1 timestop on the counter removed. <span class="tag-nerf">NERF</span></li>
+      <li>Fixed a bug where Gin could cancel a Grab Dash into SP2 during its animation. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>Light 1 now tracks the opponent. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ Gin can punish Flash Steps and Side Steps with Light 1.</small></li>
+      <li>Spiritual Pressure Move 2 is now unsafe on block. Whiff recovery increased. <span class="tag-nerf">NERF</span></li>
+      <li>Flash Step is now slower and can be consistently punished by opponents. <span class="tag-nerf">NERF</span></li>
+    </ul>
+
+    <div class="stage-label">[Initial Stage]</div>
+    <ul class="changes">
+      <li>Dash Attack whiff can no longer be canceled into Signature Move. <span class="tag-nerf">NERF</span></li>
+      <li>Tilt (tip range): hitstun increased. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ Tilt now consistently combos into Heavy in Initial Stage.</small></li>
+    </ul>
+
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Tilt step cancel removed. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ Tilt can still cancel into Signature on block or hit, but can no longer be freely step-canceled on whiff.</small></li>
+      <li>Light 2: blockstun reduced: 28 → 25. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ removes his continuous-pressure tech against Tier 1–2 jabs.</small></li>
+      <li>Heavy 2 (last hit): hitstun reduced: 40 → 38. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ removes the Heavy 2 → Signature cancel → Dash Light infinite (White Reverse loop version still possible).</small></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    A hard-to-execute Light 2 tech let Gin run effectively endless pressure even against Tier 1 jabs. While very difficult online, it was still too strong to leave in. It is now gone against Tiers 1 and 2 and would trade with Tier 3. The Heavy 2 hitstun shave removes a true infinite while deliberately preserving the White Reverse loop version, which now demands tighter execution.
+  </div>
+
+  <!-- TYBW ICHIGO (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/tybw-ichigo.webp" alt="Ichigo Kurosaki [TYBW]" loading="lazy"></div><div class="char-header-info"><div class="char-name">Ichigo Kurosaki [TYBW] <span class="credit">Changes by Nilsix</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Light 2: blockstun reduced: 28 → 27. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ Light 2 on block → Light 1 no longer frametraps Tier 3 lights online.</small></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Light 2: blockstun reduced: 28 → 27. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ Light 2 on block → Light 1 no longer frametraps Tier 3 lights online. This is his first change: V1.0 left him untouched.</small></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    His Light 2 behaved differently online than offline, granting an unintended online-only plus move. A character with a plus-on-block Light 1 and built-in frametraps does not also need infinite Light 2 pressure against Tier 3 jabs, so a single frame of blockstun comes off.
+  </div>
+
+  <!-- DANGAI ICHIGO (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/dangai-ichigo.webp" alt="Ichigo Kurosaki [Dangai]" loading="lazy"></div><div class="char-header-info"><div class="char-name">Ichigo Kurosaki [Dangai] <span class="credit">Changes by Bergen</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Level 3]</div>
+    <ul class="changes">
+      <li>Signature Move: hitstun increased: 20 → 25. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+          <small style="color:#777">→ fixed a bug where Signature was not connecting into the Flash Step follow-up on hit.</small></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Fighting Spirit required to go from Awakening to Sublimation increased by 67%. <span class="tag-nerf">NERF</span></li>
+      <li>Fixed a bug where the full Flash Step follow-up string would execute even on a blocked Flash Step. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+      <li>Fixed a bug where a whiffed Heavy could be canceled into Hakugeki. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>Dash Attack reverted to its original speed and distance. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>Level 1 Signature: Fighting Spirit given to the opponent on hit reduced by 50%. <span class="tag-nerf">NERF</span></li>
+    </ul>
+
+    <div class="stage-label">[Level 3]</div>
+    <ul class="changes">
+      <li>Tilt: damage increased by 50%. <span class="tag-buff">BUFF</span></li>
+      <li>Tilt: hitstun reduced. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ Tilt no longer combos into Light 1.</small></li>
+      <li>Signature Move: dash cancel removed. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ Signature no longer combos into dash light but resets neutral instead.</small></li>
+      <li>Signature Move: hitstun increased: 20 → 25. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+          <small style="color:#777">→ Signature now connects into the Flash Step follow-up on hit, as intended.</small></li>
+    </ul>
+  </div>
+
+  <!-- GRIMMJOW (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/grimmjow.webp" alt="Grimmjow Jeagerjaques" loading="lazy"></div><div class="char-header-info"><div class="char-name">Grimmjow Jeagerjaques <span class="credit">Changes by Nilsix</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Dash Light: hitstun increased: 22 → 25. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+          <small style="color:#777">→ fixed an issue where Dash Light → Light 1 wouldn't connect.</small></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Dash Light whiff (miss) recovery slightly increased. <span class="tag-nerf">NERF</span></li>
+      <li>Dash Light: hitstun increased: 22 → 25. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+          <small style="color:#777">→ Dash Light → Light 1 now connects reliably.</small></li>
+    </ul>
+
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Spiritual Pressure Move 1 (during SP2 Rage): unblockable property removed. <span class="tag-nerf">NERF</span></li>
+    </ul>
+  </div>
+
+  <!-- KISUKE (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/kisuke.webp" alt="Kisuke Urahara" loading="lazy"></div><div class="char-header-info"><div class="char-name">Kisuke Urahara <span class="credit">Changes by Nilsix</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Fixed an issue where Kisuke would sometimes fail to punish Flash Step while in SP2 install. <span class="tag-fix">FIX</span></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Fixed a bug where a whiffed Heavy 1 could be canceled into Hakugeki. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>Heavy 1 recovery increased by ~15%. <span class="tag-nerf">NERF</span></li>
+      <li>Light 1 whiff into Hakugeki cancel removed. <span class="tag-nerf">NERF</span></li>
+      <li>Dash Light whiff into Hakugeki cancel removed. <span class="tag-nerf">NERF</span></li>
+      <li>Light 1 and Light 1 (SP2 active) now track the opponent across Initial Stage and Awakening. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ Kisuke can punish Flash Steps.</small></li>
+      <li>Fixed an issue where Kisuke would sometimes fail to punish Flash Step while in SP2 install. <span class="tag-fix">FIX</span></li>
+    </ul>
+  </div>
+
+  <!-- SHUHEI (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/shuhei.webp" alt="Shuhei Hisagi" loading="lazy"></div><div class="char-header-info"><div class="char-name">Shuhei Hisagi <span class="credit">Changes by Efra</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Signature Move: blockstun reduced: 47 → 35. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ Signature is now unsafe on block.</small></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Back Step cancel timing reduced by ~19% for a faster back dash. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ improves his zoning mobility so he is no longer forced to stand still at mid range.</small></li>
+      <li>Heavy Tilt guard stun on Hit 2 increased by 20%. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ Shuhei can now block after it is guarded instead of being punished.</small></li>
+      <li>Signature recovery reduced by ~38%, with hit and guard stun increased. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ no longer punishable on hit. V1.1 tuned its blockstun back down (47 → 35) to keep the advantage on block in check.</small></li>
+      <li>Light 3 guard damage reduced by 50%. <span class="tag-nerf">NERF</span></li>
+      <li>SP1 (White Fear) Fighting Spirit gain reduced to 0. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>SP1 (Red Fear) guard damage on Hits 1 and 2 completely removed. <span class="tag-nerf">NERF</span></li>
+      <li>Spiritual Pressure Move 2 startup timestop removed. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+          <small style="color:#777">→ buffered counters now come out properly instead of eating the opponent's input.</small></li>
+    </ul>
+
+    <div class="stage-label">[Initial Stage]</div>
+    <ul class="changes">
+      <li>Heavy 2 guard damage on the first two hits reduced by ~55%. <span class="tag-nerf">NERF</span></li>
+      <li>Heavy 2 guard damage on Hit 3 reduced by ~44%. <span class="tag-nerf">NERF</span></li>
+    </ul>
+
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Heavy 2 guard damage on Hits 6 and 7 reduced by 50%. <span class="tag-nerf">NERF</span></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    V1.0's Signature buff overshot slightly on block. It was made unsafe on block but still safe on hit.
+  </div>
+
+  <!-- HALIBEL (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/halibel.webp" alt="Tier Halibel" loading="lazy"></div><div class="char-header-info"><div class="char-name">Tier Halibel <span class="credit">Changes by Nilsix</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Tilt: hitstun increased by 3 frames. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777"> Tilt → Signature Light was made less tight to execute online, especially on bad connections.</small></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Initial Stage]</div>
+    <ul class="changes">
+      <li>SP1 (Aerial, Aura Gauge Yellow State): hitstun reduced. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ can now only combo into Signature Light.</small></li>
+    </ul>
+
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Dash Attack hitbox slightly reduced. <span class="tag-nerf">NERF</span></li>
+      <li>Light 3: now neutral on block when in Aura Gauge Yellow state. <span class="tag-nerf">NERF</span></li>
+      <li>Heavy 1: whiff (miss) recovery increased by 20%. <span class="tag-nerf">NERF</span></li>
+      <li>Tilt: hitstun increased in V1.0, and by a further 3 frames in V1.1. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ Tilt → Signature Light is consistent in Aura Gauge Yellow state and comfortable to execute online.</small></li>
+      <li>SP1 (Aerial, Aura Gauge Yellow state): same changes as Initial Stage. <span class="tag-nerf">NERF</span></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    A pure quality-of-life change: nothing about Halibel's combo routes or damage moves, but the extra hitstun gives her Tilt → Signature Light link enough leniency to be performed reliably online, especially on bad connections.
+  </div>
+
+</div>
+
+<!-- ════════════════ V1.0 CONTENT ════════════════ -->
+<div class="content version-panel" id="panel-v10">
+
+  <div class="patch-banner">
+    <h2>Patch V1.0 — Initial Release</h2>
+    <div class="patch-date">The original reBalance of Souls release · All changes listed relative to the vanilla game</div>
+  </div>
 
   <!-- ══ UNIVERSAL CHANGES ══ -->
   <div class="section-header">Universal Changes</div>
@@ -1226,6 +1965,35 @@
   <p><span>Bros Community Patch</span> — Unofficial community balance update for BLEACH: Rebirth of Souls</p>
   <p style="margin-top:6px">This patch is not affiliated with or endorsed by Bandai Namco Entertainment.</p>
 </footer>
+
+<script>
+  // ── Version tabs ──
+  var versionNav = document.querySelector('.version-nav');
+  document.querySelectorAll('.version-tab').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      document.querySelectorAll('.version-tab').forEach(function (t) { t.classList.remove('active'); });
+      document.querySelectorAll('.version-panel').forEach(function (p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      var panelId = tab.getAttribute('data-panel');
+      var panel = document.getElementById(panelId);
+      if (panel) panel.classList.add('active');
+      setTrailerVideo(panelId);
+      // If the reader is scrolled deep into the page, snap back to the top of the notes
+      if (window.pageYOffset > versionNav.offsetTop) window.scrollTo(0, versionNav.offsetTop);
+    });
+  });
+
+  // ── V1.1 compare toggle (vs V1.0 / vs Vanilla) ──
+  document.querySelectorAll('.compare-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var v11 = document.getElementById('panel-v11');
+      document.querySelectorAll('.compare-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      if (btn.getAttribute('data-mode') === 'vanilla') v11.classList.add('show-vanilla');
+      else v11.classList.remove('show-vanilla');
+    });
+  });
+</script>
 
 </body>
 </html>
