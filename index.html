@@ -343,7 +343,7 @@
     flex: 1;
   }
   .char-header .char-name {
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 800;
     color: #fff;
     margin: 0;
@@ -514,7 +514,7 @@
 
 <!-- ════════════════ HERO ════════════════ -->
 <div class="hero">
-  <div class="hero-tag">Patch Notes — V1.1 Part 1 Out Now</div>
+  <div class="hero-tag">Patch Notes — V1.1 Out Now</div>
   <img class="hero-logo" src="logo.png" alt="BLEACH: reBALANCE of Souls">
   <div class="hero-meta">
     <span>Written by the Community</span>
@@ -595,15 +595,15 @@
 
 <!-- ════════════════ VERSION NAV ════════════════ -->
 <nav class="version-nav" aria-label="Patch version">
-  <button class="version-tab active" data-panel="panel-v11">V1.1 — Part 1<span class="tab-sub">Latest · July 2026</span></button>
+  <button class="version-tab active" data-panel="panel-v11">V1.1<span class="tab-sub">Latest · July 2026</span></button>
   <button class="version-tab" data-panel="panel-v10">V1.0<span class="tab-sub">Initial Release</span></button>
 </nav>
 
-<!-- ════════════════ V1.1 PART 1 CONTENT ════════════════ -->
+<!-- ════════════════ V1.1 CONTENT ════════════════ -->
 <div class="content version-panel active" id="panel-v11">
 
   <div class="patch-banner">
-    <h2>Patch V1.1 — Part 1</h2>
+    <h2>Patch V1.1</h2>
     <div class="patch-date">July 2026 · Balance changes, reworks &amp; the big online update</div>
   </div>
 
@@ -613,13 +613,18 @@
   <div class="highlights">
     <div class="highlight-card">
       <span class="hl-kicker">Online</span>
-      <h3>Patch vs Patch Online Play</h3>
-      Patch players can now face other Patch players online in <strong>Ranked</strong>, <strong>Free Battle</strong>, and <strong>Room Matches</strong>. On top of that, the region lock has been removed from Room Matches.
+      <h3>Online Play</h3>
+      Patch players can now face each other online in <strong>Ranked</strong>, <strong>Free Battle</strong>, and <strong>Room Matches</strong>. On top of that, the region lock has been removed from Room Matches.
     </div>
     <div class="highlight-card">
       <span class="hl-kicker">Launcher</span>
-      <h3>Bugs and Hotfixes</h3>
-      General Bugs and hotfixes for certain character with some balancing.
+      <h3>Launcher &amp; Installer Optimization</h3>
+      The launcher and installer have been optimized alongside general bugfixes to make setup more reliable.
+    </div>
+    <div class="highlight-card">
+      <span class="hl-kicker">System</span>
+      <h3>Reverse Rebalance</h3>
+      Yellow Reverse has been reined in while White Reverse gains a little more reward, keeping the two Reverse options more evenly matched.
     </div>
     <div class="highlight-card">
       <span class="hl-kicker">Rework</span>
@@ -628,13 +633,13 @@
     </div>
     <div class="highlight-card">
       <span class="hl-kicker">Rework</span>
-      <h3>Uryu's True DP</h3>
-      Uryu's Spiritual Pressure Move 2 is now a true DP — fully invincible for its entire duration, including the follow-up arrow — balanced by being more reactable and easier to punish on block.
+      <h3>Uryu's True DP Full Rework</h3>
+      Uryu's Spiritual Power Move 2 is now a true DP. fully invincible for its duration, way more unsafe on block and whiff, alongside other balance changes to match his rework.
     </div>
     <div class="highlight-card">
       <span class="hl-kicker">Launcher</span>
       <h3>Quick Launchers</h3>
-      New shortcuts let you instantly launch either the Community Patch or vanilla BRoS without opening the launcher first — a handy shortcut when you want to get into a match ASAP.
+      New shortcuts let you instantly launch either the Community Patch or vanilla BRoS without opening the launcher first.
     </div>
   </div>
 
@@ -646,16 +651,72 @@
     <span class="compare-hint">“V1.0” shows only what this update changed compared to the last V1.0 Patch. “Vanilla” shows every change currently active versus the unmodded game, merged across V1.0 and V1.1. Entries that are marked REVERTED are V1.0 changes that have been rolled back.</span>
   </div>
 
+  <!-- ══ SYSTEM & LAUNCHER ══ -->
+  <div class="section-header">System, Reverse &amp; Launcher</div>
+
+  <!-- LAUNCHER / INSTALLER -->
+  <div class="char-header"><div class="char-header-info"><div class="char-name">Launcher &amp; Installer</div></div></div>
+
+  <div class="cmp">
+    <div class="stage-label">[Optimization &amp; Bugfixes]</div>
+    <ul class="changes">
+      <li>The launcher and installer have been optimized so installs run more smoothly. <span class="tag-buff">OPTIMIZATION</span></li>
+      <li>General bug fixes <span class="tag-fix">FIX</span></li>
+      <li>New quick launchers let you jump straight into either the Community Patch or vanilla BRoS without opening the launcher first. <span class="tag-buff">QUALITY OF LIFE</span><br>
+          <small style="color:#777">→ handy as a shortcut when you just want to get into a match as fast as possible.</small></li>
+    </ul>
+  </div>
+
+  <!-- REVERSE MECHANICS -->
+  <div class="char-header"><div class="char-header-info"><div class="char-name">Reverse Mechanics <span class="credit">Changes by Bergen</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Yellow Reverse]</div>
+    <ul class="changes">
+      <li>Passive Fighting Spirit gain during Yellow Reverse removed. <span class="tag-nerf">NERF</span></li>
+      <li>Spiritual Power gain rate reduced by 44%. <span class="tag-nerf">NERF</span></li>
+    </ul>
+
+    <div class="stage-label">[White Reverse]</div>
+    <ul class="changes">
+      <li>Fighting Spirit added increased by 4%. <span class="tag-buff">BUFF</span></li>
+      <li>Spiritual Power gain rate while attacking reduced by 44%. <span class="tag-nerf">NERF</span></li>
+      <li>Base Spiritual Power gain rate increased by 25%. <span class="tag-buff">BUFF</span></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Yellow Reverse]</div>
+    <ul class="changes">
+      <li>Passive Fighting Spirit gain during Yellow Reverse removed. <span class="tag-nerf">NERF</span></li>
+      <li>Spiritual Power gain rate reduced by 44%. <span class="tag-nerf">NERF</span></li>
+    </ul>
+
+    <div class="stage-label">[White Reverse]</div>
+    <ul class="changes">
+      <li>Fighting Spirit added increased by 4%. <span class="tag-buff">BUFF</span></li>
+      <li>Spiritual Power gain rate while attacking reduced by 44%. <span class="tag-nerf">NERF</span></li>
+      <li>Base Spiritual Power gain rate increased by 25%. <span class="tag-buff">BUFF</span></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    Yellow Reverse was building resources a little too freely, so its passive Fighting Spirit gain has been removed and its Spiritual Power gain rate was reduced to stop it from being the do all wonder action that it was. 
+    White Reverse gets a small nudge in the other direction: slightly more Fighting Spirit per tick and a higher base Spiritual Power gain rate, with the attacking gain rate trimmed to keep it in line. 
+    The goal is to leave the two Reverse options feeling like real alternatives rather than one being the default optimal option.
+  </div>
+
   <!-- ══ CHARACTER ADJUSTMENTS ══ -->
   <div class="section-header">Character Adjustments and Changes</div>
 
   <!-- BYAKUYA (V1.1) -->
-  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/byakuya.webp" alt="Byakuya Kuchiki" loading="lazy"></div><div class="char-header-info"><div class="char-name">Byakuya Kuchiki <span class="credit">Changes by Meri</span> <span class="tag-rework">REWORK</span></div></div></div>
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/byakuya.webp" alt="Byakuya Kuchiki" loading="lazy"></div><div class="char-header-info"><div class="char-name">Byakuya Kuchiki <span class="credit">Changes by Bergen, Meri and Nilsix</span> <span class="tag-rework">REWORK</span></div></div></div>
 
   <div class="cmp cmp-v10">
     <div class="stage-label">[Initial Stage]</div>
     <ul class="changes">
-      <li>Scattered State SP1: blockstun reduced (32 → 17), going from plus on block to minus on block. <span class="tag-nerf">NERF</span><br>
+      <li>Scattered State SP1: blockstun reduced by 47%, going from plus on block to minus on block. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ This tool is a long-range instant whiff punish that combos. Being plus on block as well was overloaded, so its power has been toned down.</small></li>
     </ul>
 
@@ -667,17 +728,13 @@
     <div class="stage-label">[Awakening — Senkei]</div>
     <ul class="changes">
       <li>Identical to his base sword form, with damage improved on all abilities. <span class="tag-buff">BUFF</span></li>
+      <li>Heavy range deadzone increased. <span class="tag-nerf">NERF</span></li>
       <li>Heavy range slightly increased. <span class="tag-buff">BUFF</span></li>
-      <li>New Signature Move: Senka. A medium-range command grab. <span class="tag-rework">REWORK</span><br>
+      <li>New Signature Move: Senka. A low-range command grab and miux-up tool. <span class="tag-rework">REWORK</span><br>
           <small style="color:#777">→ combos into Hoho follow-up, Yellow Reverse, and SP1.</small></li>
-      <li>Senka: movement speed reduced by 25%. <span class="tag-nerf">NERF</span></li>
-      <li>Senka: range reduced by roughly half — travel distance, failed-move distance, and limit length all cut down. <span class="tag-nerf">NERF</span><br>
-          <small style="color:#777">→ can no longer be hold-dashed across half the screen for a sneaky command grab.</small></li>
-      <li>Senka: can no longer be canceled into on whiff, though it can still be canceled into on block or on hit. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span><br>
-          <small style="color:#777">→ hitstun increased by 1 frame so it stays consistently plus on hit.</small></li>
       <li>SP1: same as base form, but now swaps Byakuya into Scattered State for 20 seconds before wearing off. <span class="tag-rework">REWORK</span></li>
-      <li>SP1: hitstun reduced (44 → 35) and no longer combos into Scattered State SP1 afterward. <span class="tag-nerf">NERF</span></li>
-      <li>SP1: removed Byakuya's ability to press Heavy right away without moving first. <span class="tag-nerf">NERF</span></li>
+      <li>SP1: hitstun reduced by 20% and no longer combos into Scattered State SP1 afterward. <span class="tag-nerf">NERF</span></li>
+      <li>SP1: removed Byakuya's ability to press Heavy right away after casting SP1 without moving first. <span class="tag-nerf">NERF</span></li>
       <li>SP2: can no longer be combo'd into afterward. <span class="tag-nerf">NERF</span></li>
       <li>Hakugeki is identical across both forms.</li>
     </ul>
@@ -685,19 +742,14 @@
     <div class="stage-label">[Awakening — Scattered State]</div>
     <ul class="changes">
       <li>Identical to his zoner form; lasts 20 seconds before reverting to Senkei. <span class="tag-rework">REWORK</span></li>
-      <li>Heavy 1 guard damage improved. <span class="tag-buff">BUFF</span></li>
-      <li>Heavy 1 guard damage reduced (390 → 240). <span class="tag-nerf">NERF</span></li>
       <li>SP1: same as before, but now swaps Byakuya back into Senkei. <span class="tag-rework">REWORK</span></li>
-      <li>SP1: minimum damage per hit reduced (300 → 160). <span class="tag-nerf">NERF</span></li>
-      <li>SP2 can now combo without needing to cancel the animation. <span class="tag-buff">BUFF</span></li>
+      <li>SP2 can now combo if performed during the Scattered State. <span class="tag-buff">BUFF</span></li>
     </ul>
 
     <div class="stage-label">[Awakening — Common]</div>
     <ul class="changes">
-      <li>SP2 swaps Byakuya's form in either state, and begins a combo. <span class="tag-rework">REWORK</span></li>
-      <li>Heavy 2 recovery decreased slightly. <span class="tag-buff">BUFF</span></li>
       <li>Grab: position after a successful throw adjusted: <span class="tag-fix">FIX</span><br>
-          <small style="color:#777">→ Grab → Signature no longer whiffs.</small></li>
+          <small style="color:#777">→ Grab → Heavy no longer whiffs.</small></li>
     </ul>
   </div>
 
@@ -708,11 +760,11 @@
       <li>Light 3 (Sword Form): hitstun reduced <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span><br>
           <small style="color:#777">→ removes an unintended infinite loop triggered by Strike Back.</small></li>
       <li>Hoho Follow-up (Petals Down): removed his ability to continue into SP1 immediately after. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
-      <li>Spiritual Pressure Move 2: timestop removed. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+      <li>Spiritual Power Move 2: timestop removed. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
           <small style="color:#777">→ prevents the timestop from "munching" inputs from the opponent that would have otherwise activated the counter.</small></li>
       <li>SP2 counter collision angle improved for more reliable counter hit connections. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
       <li>Byakuya's arrival position after SP2 adjusted for aura purposes. <span class="tag-buff">AURA BUFF</span></li>
-      <li>Scattered State SP1: blockstun reduced (32 → 17), going from plus on block to minus on block. <span class="tag-nerf">NERF</span><br>
+      <li>Scattered State SP1: blockstun reduced by 47%, going from plus on block to minus on block. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ added in V1.1 — a long-range instant whiff punish that combos shouldn't also be plus on block.</small></li>
     </ul>
 
@@ -722,11 +774,11 @@
       <li>Senkei: identical to his base sword form, with damage improved on all abilities and slightly increased Heavy range. <span class="tag-buff">BUFF</span></li>
       <li>Senkei: new Signature Move (Senka) — a medium-range command grab that combos into Hoho follow-up, Yellow Reverse, and SP1. <span class="tag-rework">REWORK</span></li>
       <li>Senkei: Senka's movement speed reduced by 25%, and its range cut by roughly half (travel distance, failed-move distance, and limit length all reduced) so it can no longer be hold-dashed across half the screen for a sneaky command grab. <span class="tag-nerf">NERF</span></li>
-      <li>Senkei: Senka can no longer be canceled into on whiff (block/hit cancels still work), with hitstun increased by 1 frame so it stays consistently plus on hit. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>Senkei: Senka can no longer be canceled into at all — not on whiff, block, or hit — with hitstun increased by 1 frame so it stays consistently plus on hit. <span class="tag-nerf">NERF</span></li>
       <li>Senkei: SP1 swaps Byakuya into Scattered State for 20 seconds before wearing off. <span class="tag-rework">REWORK</span></li>
-      <li>Senkei: SP1 hitstun reduced (44 → 35), no longer combos into Scattered State SP1 afterward, and removed Byakuya's ability to press Heavy right away without moving first. <span class="tag-nerf">NERF</span></li>
+      <li>Senkei: SP1 hitstun reduced by 20%, no longer combos into Scattered State SP1 afterward, and removed Byakuya's ability to press Heavy right away without moving first. <span class="tag-nerf">NERF</span></li>
       <li>Senkei: SP2 can no longer be combo'd into afterward. <span class="tag-nerf">NERF</span></li>
-      <li>Scattered State: identical to his zoner form; lasts 20 seconds, with Heavy 1 guard damage first improved, then reduced (390 → 240). SP1 swaps him back into Senkei, with its minimum damage per hit reduced (300 → 160). <span class="tag-rework">REWORK</span></li>
+      <li>Scattered State: identical to his zoner form; lasts 20 seconds, with Heavy 1 guard damage first improved, then reduced by 38%. SP1 swaps him back into Senkei, with its minimum damage per hit reduced by 47%. <span class="tag-rework">REWORK</span></li>
       <li>Scattered State: SP2 can now combo without needing to cancel the animation. <span class="tag-buff">BUFF</span></li>
       <li>SP2 swaps Byakuya's form in either state, and begins a combo. Hakugeki is identical across both forms. <span class="tag-rework">REWORK</span></li>
       <li>Heavy 2 recovery decreased slightly. <span class="tag-buff">BUFF</span></li>
@@ -738,8 +790,8 @@
     <ul class="changes">
       <li><small style="color:#777">These V1.0 changes were made to the pre-rework Awakening kit and carry over where the corresponding moves still exist.</small></li>
       <li>Heavy attack hitbox position moved out. Deadzone increased. Max range slightly increased. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
-      <li>Spiritual Pressure Move 1: reverse regeneration removed from the second portion of the attack. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
-      <li>Spiritual Pressure Move 2: timestop removed. Hitbox on the damage portion slightly expanded to reduce janky interactions. Counter hit improved. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+      <li>Spiritual Power Move 1: reverse regeneration removed from the second portion of the attack. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+      <li>Spiritual Power Move 2: timestop removed. Hitbox on the damage portion slightly expanded to reduce janky interactions. Counter hit improved. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
       <li>Hakugeki (Down and Up variants): movement distance increased. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
           <small style="color:#777">→ the in-combo Hakugeki now connects correctly.</small></li>
     </ul>
@@ -748,9 +800,7 @@
   <div class="dev-notes">
     <div class="dev-notes-title">Developer's Notes</div>
     The community has always been divided on Byakuya and how to properly balance him. His ability to zone unchecked left a lot feeling like he was just unfair or too strong, but nerfing too much of his kit would only gut the character. That's why Byakuya's Awakening has been rebuilt around form-switching: Senkei for melee, Scattered State for ranged, with SP1 and SP2 acting as the switches with SP2 even starts a combo on top of swapping. His new command-grab Signature allows him a much stronger mix-up tool that combos into hoho follow up, Yellow Reverse, or SP1. In base form, Scattered State SP1 was a long-range instant whiff punish that could combo while also being plus on block made it too strong of a move, so it is now minus.
-    <br><br>
-    A follow-up hotfix let Scattered State SP2 combo without cancelling its animation, restored Senka's ability to be canceled into on block and hit (only whiff cancels stay removed), and gave it +1 frame of hitstun so it remains consistently plus on hit. Senka's range was then found to still be too strong even accounting for the reduced cancel options — holding the dash could still cross roughly half the screen for a sneaky command grab — so its travel distance, failed-move distance, and limit length have all been cut by about half.
-  </div>
+    </div>
 
   <!-- URYU (V1.1) -->
   <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/uryu.webp" alt="Uryu Ishida" loading="lazy"></div><div class="char-header-info"><div class="char-name">Uryu Ishida <span class="credit">Changes by Bergen</span> <span class="tag-rework">REWORK</span></div></div></div>
@@ -758,22 +808,46 @@
   <div class="cmp cmp-v10">
     <div class="stage-label">[Common]</div>
     <ul class="changes">
-      <li>SP2 is now a <strong>true DP</strong>: fully invincible for its entire duration. <span class="tag-buff">BUFF</span></li>
-      <li>SP2 made more reactable and easier to punish. <span class="tag-nerf">NERF</span></li>
+      <li>SP2 is now a <strong>true DP</strong>: invincible at cast + a few frames <span class="tag-buff">BUFF</span></li>
+      <li>SP2 install is now granted only on hit, and the arrow only comes out on hit. <span class="tag-fix">FIX</span><br>
+          <small style="color:#777">→ resolves the earlier issue where SP2 handed Uryu his install even on block or whiff. Armored moves still count as "guarded" against, so they do not grant install nor the arrow follow up either.</small></li>
+      <li>SP2 is very unsafe on whiff or guard, keeping it reactable and easy to punish. <span class="tag-nerf">NERF</span></li>
+      <li>Light 1 follow-up can now combo into Hoho follow-up. <span class="tag-buff">BUFF</span></li>
+      <li>Tilt can now be canceled in Awakening and Reawakening. <span class="tag-buff">BUFF</span></li>
       <li>Fixed a bug where Uryu's Tilt follow-up would miss certain opponents in red HP. <span class="tag-fix">FIX</span></li>
       <li>Fighting Spirit gain penalty outside Reishi Concentration State removed (was −20% in V1.0). <span class="tag-buff">BUFF</span></li>
     </ul>
 
+    <div class="stage-label">[Initial Stage]</div>
+    <ul class="changes">
+      <li>Light 2 and Light 3 guard stun increased to 34. <span class="tag-fix">FIX</span><br>
+          <small style="color:#777">→ stops certain characters (for example Kaien) from landing a Strike Back Heavy starter after the light string on block.</small></li>
+    </ul>
+
     <div class="stage-label">[Awakening]</div>
     <ul class="changes">
-      <li>Fighting Spirit gain bonus in Reishi Concentration State reduced: +100% → +25%. <span class="tag-nerf">NERF</span></li>
+      <li>Fighting Spirit gain bonus in Reishi Concentration State reduced by 75%. <span class="tag-nerf">NERF</span></li>
+      <li>SP2 Fighting Spirit gain reduced by 50%. <span class="tag-nerf">NERF</span></li>
+    </ul>
+
+    <div class="stage-label">[Reawakening]</div>
+    <ul class="changes">
+      <li>Ranged Hakugeki cast speed increased by 10%. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ fewer drops.</small></li>
+      <li>Fixed a bug where Uryu could not continue into Heavy 2 after Light 2 at max range. <span class="tag-fix">FIX</span></li>
+      <li>Light 2 hitstun increased by 14%, for consistency with the Heavy 2 fix. <span class="tag-fix">FIX</span></li>
+      <li>Heavy 2 arrow speed increased by 50%. <span class="tag-buff">BUFF</span></li>
     </ul>
   </div>
 
   <div class="cmp cmp-vanilla">
     <div class="stage-label">[Common]</div>
     <ul class="changes">
-      <li>Spiritual Pressure Move 2 reworked from a counter into a <strong>true DP</strong> (Invincible Reversal): strikes from behind, deals more damage, and is fully invincible for its entire duration — including during the follow-up arrow. In exchange, it is reactable and easy to punish on block. <span class="tag-rework">REWORK</span></li>
+      <li>Spiritual Power Move 2 reworked from a counter into a <strong>true DP</strong> (Invincible Reversal): strikes from behind, deals more damage, and is invincible from frame 1 for its entire duration — including during the follow-up arrow. In exchange, it is reactable and mega unsafe on whiff or guard. <span class="tag-rework">REWORK</span></li>
+      <li>SP2 install is now granted only on hit, and the arrow only comes out on hit. <span class="tag-fix">FIX</span><br>
+          <small style="color:#777">→ no install on block or whiff. Armored moves count as "guarded" against, so they do not grant install either.</small></li>
+      <li>Light 1 whiff follow-up can now combo into the Hoho follow-up. <span class="tag-buff">BUFF</span></li>
+      <li>Tilt can now be canceled in Awakening and Reawakening — an instant cancel, though once the arrow releases you can no longer cut the recovery with a step. <span class="tag-buff">BUFF</span></li>
       <li class="reverted-line">Fighting Spirit gain from Light 1–3, Heavy 1–2, Tilt, Charged Tilt, Flash Step Follow-up, and Grab reduced by 20%. <span class="tag-reverted">REVERTED</span><br>
           <small style="color:#999">→ V1.0 change removed in V1.1 — his Fighting Spirit gain outside Reishi Concentration is back to vanilla.</small></li>
       <li>Fixed a bug where Uryu's Tilt follow-up would miss certain opponents in red HP. <span class="tag-fix">FIX</span></li>
@@ -782,6 +856,8 @@
     <div class="stage-label">[Initial Stage]</div>
     <ul class="changes">
       <li>SP2 (True DP): tracks the opponent slightly. Hitstun and guard stun significantly reduced to allow proper punishment. <span class="tag-rework">REWORK</span></li>
+      <li>Light 2 and Light 3 guard stun increased to 34. <span class="tag-fix">FIX</span><br>
+          <small style="color:#777">→ stops certain characters (for example Kaien) from landing a Strike Back Heavy starter after the light string on block.</small></li>
     </ul>
 
     <div class="stage-label">[Awakening]</div>
@@ -790,9 +866,10 @@
       <li>SP1 Fighting Spirit gain doubled. <span class="tag-buff">BUFF</span></li>
       <li>SP1 range increased to prevent dropping after Heavy 2 at max range. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
       <li>Light attack range slightly increased to match base light range. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
-      <li>Signature Move in Reishi Concentration State: Fighting Spirit gain reduced by 50%. <span class="tag-buff">BUFF</span></li>
+      <li>Signature Move Fighting Spirit gain in Reishi Concentration State restored to its pre-nerf value (a 100% increase). <span class="tag-buff">BUFF</span></li>
       <li>Fighting Spirit gain in Reishi Concentration State for Heavy 1–2, Tilt, and Charged Tilt: +25%. <span class="tag-buff">BUFF</span><br>
           <small style="color:#777">→ was +100% in V1.0, reduced to +25% in V1.1.</small></li>
+      <li>SP2 Fighting Spirit gain reduced by 50%. <span class="tag-nerf">NERF</span></li>
       <li>SP2 (True DP): tracks the opponent, larger explosion radius, and increased damage. Recovery and guard stun reduced for easier punishing. <span class="tag-rework">REWORK</span></li>
       <li>Flash Step follow-up on block fixed. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
           <small style="color:#777">→ no longer leaves Uryu unsafe.</small></li>
@@ -809,15 +886,17 @@
       <li>Charged Tilt now homes in on the opponent. <span class="tag-buff">BUFF</span></li>
       <li>Guard damage on Heavy 1, Heavy 2, Light 2, Light 3, Tilt, and Charged Tilt all increased by 10%. <span class="tag-buff">BUFF</span></li>
       <li>SP2 (True DP): large explosion radius, damage redistributed for consistency. Guard damage reduced by 25%. <span class="tag-rework">REWORK</span></li>
+      <li>Ranged Hakugeki cast speed increased by 10% for fewer drops. <span class="tag-buff">BUFF</span></li>
+      <li>Fixed a bug where Uryu could not continue into Heavy 2 after Light 2 at max range, with Light 2 hitstun increased by 14% for consistency. <span class="tag-fix">FIX</span></li>
+      <li>Heavy 2 arrow speed increased by 50%. <span class="tag-buff">BUFF</span></li>
       <li>Flash Step follow-up on block fixed: same correction as Awakening. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
     </ul>
   </div>
 
   <div class="dev-notes">
     <div class="dev-notes-title">Developer's Notes</div>
-    Uryu's SP2 now works as a genuine reversal: while it is active, he is fully invincible until the arrow is fired. The move was however made more reactable and significantly easier to punish with worse recovery. His Fighting Spirit was also rebalanced, alongside receiving some bug fixes.
-    <br><br>
-    <strong>Known Issue:</strong> SP2 currently grants Uryu his install even on block or whiff. A fix is being worked on and will (hopefully) arrive in Part 2.
+    Uryu's SP2 now works as a genuine reversal: it is invincible from frame 1, but in exchange it is reactable and very unsafe on whiff or guard. Just as important, the earlier install problem is resolved. SP2 now grants his install only on hit, and the arrow itself only comes out on hit, so there is no more free install off a blocked or whiffed reversal.
+    His Fighting Spirit was rebalanced across all stages, and a batch of Reawakening bug fixes cleans up his combo consistency at max range.
   </div>
 
   <!-- YAMAMOTO (V1.1) -->
@@ -826,18 +905,20 @@
   <div class="cmp cmp-v10">
     <div class="stage-label">[Common]</div>
     <ul class="changes">
-      <li>Spiritual Pressure Move 2: knockback on hit reduced: 5 → 0.2. <span class="tag-buff">BUFF</span><br>
+      <li>Spiritual Power Move 2: knockback on hit reduced by 96%. <span class="tag-buff">BUFF</span><br>
           <small style="color:#777">→ Yamamoto can now combo after SP2 again with Light 1.</small></li>
-      <li>Spiritual Pressure Move 2: hitstun on the last hit reduced: 78 → 66. <span class="tag-nerf">NERF</span><br>
-          <small style="color:#777">→ keeps the new follow-up limited to Light 1 instead of a full conversion.</small></li>
+      <li>Spiritual Power Move 2: hitstun on the last hit reduced by 15%. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ keeps the new follow-up limited to Light 1.</small></li>
+      <li>Fixed a bug where SP2 would whiff when a grab was performed at the same time. <span class="tag-fix">FIX</span></li>
     </ul>
 
     <div class="stage-label">[Awakening]</div>
     <ul class="changes">
-      <li>Tilt: Inferno gauge gain restored: 0.15 → 0.2. <span class="tag-buff">BUFF</span><br>
+      <li>Charged SP1: damage increased across the multi-hit by 75% (hits 5 times) and by 25%, with damage guarantee on the multi-hit reduced by 33%. <span class="tag-buff">BUFF</span></li>
+      <li>Tilt: Inferno gauge gain restored, increased by 33%. <span class="tag-buff">BUFF</span><br>
           <small style="color:#777">→ back to his vanilla burn gauge gain rate.</small></li>
-      <li>Signature Move  1: damage reduced: 1250 → 750. <span class="tag-nerf">NERF</span></li>
-      <li>Signature Move  2: damage reduced: 1500 → 1000. <span class="tag-nerf">NERF</span><br>
+      <li>Signature Move  1: damage reduced by 40%. <span class="tag-nerf">NERF</span></li>
+      <li>Signature Move  2: damage reduced by 33%. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ for reference: Signature 1 + Signature 2 against Bankai Ichigo dealt 3200 damage, but now deals 2300.</small></li>
     </ul>
   </div>
@@ -846,8 +927,10 @@
     <div class="stage-label">[Common]</div>
     <ul class="changes">
       <li>Signature Move: fixed an issue where it could hit an opponent from behind. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
-      <li>Spiritual Pressure Move 2: knockback and hitstun retuned (knockback 0.2, last-hit hitstun 66). <span class="tag-nerf">NERF</span><br>
+      <li>Spiritual Power Move 2: knockback and hitstun retuned (knockback 0.2, last-hit hitstun 66). <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ Yamamoto can only follow up with Light 1 after SP2 lands — vanilla allowed full combos.</small></li>
+      <li>Fixed a bug where SP2 would whiff when a grab was performed at the same time. <span class="tag-fix">FIX</span><br>
+          <small style="color:#777">→ resolves the V1.0 known issue where SP2 could miss against an opponent grabbing at very close range.</small></li>
     </ul>
 
     <div class="stage-label">[Awakening]</div>
@@ -855,9 +938,9 @@
       <li>Tilt: Restored Yamamoto's original Special Flash Attack. <span class="tag-buff">BUFF</span></li>
       <li class="reverted-line">Tilt: Inferno gauge gain reduced by 25%. <span class="tag-reverted">REVERTED</span><br>
           <small style="color:#999">→ V1.0 change reverted in V1.1 — gain is back at the vanilla rate (0.2).</small></li>
-      <li>Spiritual Pressure Move 1 (Charged): damage reduced by 25%. <span class="tag-nerf">NERF</span></li>
-      <li>Signature Move 1: damage reduced: 1250 → 750 (−40%). <span class="tag-nerf">NERF</span></li>
-      <li>Signature Move 2: damage reduced: 1500 → 1000 (−33%). <span class="tag-nerf">NERF</span></li>
+      <li>Charged SP1: after the V1.0 25% damage cut, damage has been pushed back up in V1.1 by 75% (hits 5 times) and by 25%, with the multi-hit damage guarantee reduced by 33%. <span class="tag-buff">BUFF</span></li>
+      <li>Signature Move 1: damage reduced by 40%. <span class="tag-nerf">NERF</span></li>
+      <li>Signature Move 2: damage reduced by 33%. <span class="tag-nerf">NERF</span></li>
     </ul>
   </div>
 
@@ -866,15 +949,43 @@
     V1.0 turned SP2 into a pure spacing tool; V1.1 gives him Light 1 instead as a middle ground, so landing it is rewarded without restoring his full combo damage. In exchange, his Awakening signature damage has been brought down: both Signature 1 and 2 hit noticeably less hard, while his Inferno gauge gain on Tilt returns to its vanilla values.
   </div>
 
+  <!-- UNOHANA (V1.1)-->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/Unohana.webp" alt="Unohana Retsu" loading="lazy"></div><div class="char-header-info"><div class="char-name">Unohana Retsu <span class="credit">Changes by Nilsix</span></div></div></div>
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Initial Stage]</div>
+    <ul class="changes">
+      <li>Fighting spirit required to go from Base to Evo increased by 15%. <span class="tag-nerf">NERF</span><br>
+    </ul>
+
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Light 1 pushback increased by 50% <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ further reducing the light1 jail/mix from V1.0.</small></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Awakening]</div>
+      <ul class="changes">
+        <li>Light 1 knockback on hit moderately increased (~240%) <span class="tag-nerf">NERF</span></li>
+          <small style="color: #777;">→ This was to prevent a pseudo infinite light 1 jail on block. </small></li>
+      </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    An earlier hotfix experimented with reducing Flashmaster SP1's knockback to stop SP1 → Light 1 whiffing against certain characters, but the very last hit still whiffed against characters like Komamura and risked leaving the move in a bugged state. That experiment has been reverted in favor of restoring SP1's full hitstun, while the harsher Heavy 1 scaling keeps the resulting combo damage in check.
+  </div>
+
   <!-- YORUICHI (V1.1) -->
   <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/yoruichi.webp" alt="Yoruichi Shihoin" loading="lazy"></div><div class="char-header-info"><div class="char-name">Yoruichi Shihoin <span class="credit">Changes by Nilsix</span></div></div></div>
 
   <div class="cmp cmp-v10">
     <div class="stage-label">[Awakening]</div>
     <ul class="changes">
-      <li>SP1 (Flashmaster): hitstun restored: 42 → 50. <span class="tag-buff">BUFF</span><br>
+      <li>SP1 (Flashmaster): hitstun restored, increased by 19%. <span class="tag-buff">BUFF</span><br>
           <small style="color:#777">→ SP1 can now combo into Heavy again, and SP1 → Light 1 no longer whiffs against certain characters.</small></li>
-      <li>Heavy 1: damage scaling increased: 0.8 → 0.6. <span class="tag-nerf">NERF</span><br>
+      <li>Heavy 1: damage scaling reduced by 25%. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ the next move after Heavy 1 now does 60% of its damage instead of 80%.</small></li>
     </ul>
   </div>
@@ -889,7 +1000,7 @@
     <ul class="changes">
       <li>Light 1 now tracks the opponent. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
           <small style="color:#777">→ Yoruichi can punish Flash Steps with Light 1.</small></li>
-      <li>Spiritual Pressure Move 2 timestop removed for consistency across all SP counters. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+      <li>Spiritual Power Move 2 timestop removed for consistency across all SP counters. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
     </ul>
 
     <div class="stage-label">[Awakening]</div>
@@ -898,7 +1009,7 @@
           <small style="color:#777">→ Anken into forward dash is now unsafe on block.</small></li>
       <li class="reverted-line">SP1 (Flashmaster): hitstun reduced by ~16%. <span class="tag-reverted">REVERTED</span><br>
           <small style="color:#999">→ V1.0 change reverted in V1.1 — hitstun is back at 50, so SP1 combos into Heavy as in vanilla.</small></li>
-      <li>Heavy 1: damage scaling increased: 0.8 → 0.6. <span class="tag-nerf">NERF</span><br>
+      <li>Heavy 1: damage scaling reduced by 25%. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ the next move after Heavy 1 does 60% of its damage instead of 80%.</small></li>
       <li>Flash Step follow-up (last hit) hitstun reduced by ~14%. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ Flash Step follow-up → dash light oki is retained, but Yellow Reverse is no longer possible afterward.</small></li>
@@ -916,21 +1027,24 @@
   <div class="cmp cmp-v10">
     <div class="stage-label">[Awakening]</div>
     <ul class="changes">
-      <li>Light 2: blockstun reduced: 28 → 25. <span class="tag-nerf">NERF</span><br>
-          <small style="color:#777">→ removes a tech that gave Gin continuous pressure even against Tier 1 mashing. No longer possible against Tier 1–2 jabs, and REALLY hard against Tier 3.</small></li>
-      <li>Heavy 2 (last hit): hitstun reduced: 40 → 38. <span class="tag-nerf">NERF</span><br>
-          <small style="color:#777">→ removes the Heavy 2 → Signature cancel → Dash Light infinite. The route still works during White Reverse — a loop, not an infinite — but the timing is tighter.</small></li>
+      <li>Amount of fighting spirit required to go from evo to sublimation increased by ~20%. <span class="tag-nerf">NERF</span><br>
+      <li>Light 2: blockstun reduced by 11%. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ removes a tech that gave Gin continuous pressure even against Tier 1 light. No longer possible against Tier 1–2 jabs, and REALLY hard against Tier 3.</small></li>
+      <li>Heavy 2 (last hit): hitstun reduced by 5%. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ removes the Heavy 2 → Signature cancel → Dash Light infinite. The route still works during White Reverse, but the timing is tighter.</small></li>
+      <li>Signature recovery increased by 100% <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ increased recovery to make punishing the signature more reliable and discourage players from spamming it.</small></li>
     </ul>
   </div>
 
   <div class="cmp cmp-vanilla">
     <div class="stage-label">[Common]</div>
     <ul class="changes">
-      <li>Spiritual Pressure Move 1 timestop on the counter removed. <span class="tag-nerf">NERF</span></li>
+      <li>Spiritual Power Move 1 timestop on the counter removed. <span class="tag-nerf">NERF</span></li>
       <li>Fixed a bug where Gin could cancel a Grab Dash into SP2 during its animation. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
       <li>Light 1 now tracks the opponent. <span class="tag-buff">BUFF</span><br>
           <small style="color:#777">→ Gin can punish Flash Steps and Side Steps with Light 1.</small></li>
-      <li>Spiritual Pressure Move 2 is now unsafe on block. Whiff recovery increased. <span class="tag-nerf">NERF</span></li>
+      <li>Spiritual Power Move 2 is now unsafe on block. Whiff recovery increased. <span class="tag-nerf">NERF</span></li>
       <li>Flash Step is now slower and can be consistently punished by opponents. <span class="tag-nerf">NERF</span></li>
     </ul>
 
@@ -945,9 +1059,9 @@
     <ul class="changes">
       <li>Tilt step cancel removed. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ Tilt can still cancel into Signature on block or hit, but can no longer be freely step-canceled on whiff.</small></li>
-      <li>Light 2: blockstun reduced: 28 → 25. <span class="tag-nerf">NERF</span><br>
+      <li>Light 2: blockstun reduced by 11%. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ removes his continuous-pressure tech against Tier 1–2 jabs.</small></li>
-      <li>Heavy 2 (last hit): hitstun reduced: 40 → 38. <span class="tag-nerf">NERF</span><br>
+      <li>Heavy 2 (last hit): hitstun reduced by 5%. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ removes the Heavy 2 → Signature cancel → Dash Light infinite (White Reverse loop version still possible).</small></li>
     </ul>
   </div>
@@ -963,22 +1077,24 @@
   <div class="cmp cmp-v10">
     <div class="stage-label">[Common]</div>
     <ul class="changes">
-      <li>Light 2: blockstun reduced: 28 → 27. <span class="tag-nerf">NERF</span><br>
+      <li>Light 2: blockstun reduced by 4%. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ Light 2 on block → Light 1 no longer frametraps Tier 3 lights online.</small></li>
+      <li>signature light blockstun reduced by 1 frame <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ TYBW ichigo can't sidestep tier 3 lights after sig light, just like he can't do it to tier 1 & 2 lights.</small></li>
     </ul>
   </div>
 
   <div class="cmp cmp-vanilla">
     <div class="stage-label">[Common]</div>
     <ul class="changes">
-      <li>Light 2: blockstun reduced: 28 → 27. <span class="tag-nerf">NERF</span><br>
+      <li>Light 2: blockstun reduced by 4%. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ Light 2 on block → Light 1 no longer frametraps Tier 3 lights online. This is his first change: V1.0 left him untouched.</small></li>
     </ul>
   </div>
 
   <div class="dev-notes">
     <div class="dev-notes-title">Developer's Notes</div>
-    His Light 2 behaved differently online than offline, granting an unintended online-only plus move. A character with a plus-on-block Light 1 and built-in frametraps does not also need infinite Light 2 pressure against Tier 3 jabs, so a single frame of blockstun comes off.
+    His Light 2 behaved differently online than offline, granting an unintended online-only plus move. A character with a plus-on-block Light 1 and built-in frametraps does not also need infinite Light 2 pressure against Tier 3 jabs, nor a sidestep mix against tier 3 jabs, so a single frame of blockstun comes off.
   </div>
 
   <!-- DANGAI ICHIGO (V1.1) -->
@@ -987,8 +1103,9 @@
   <div class="cmp cmp-v10">
     <div class="stage-label">[Level 3]</div>
     <ul class="changes">
-      <li>Signature Move: hitstun increased: 20 → 25. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+      <li>Signature Move: hitstun increased by 25%. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
           <small style="color:#777">→ fixed a bug where Signature was not connecting into the Flash Step follow-up on hit.</small></li>
+      <li>SP2: Made faster to allow for better whiff punishing <span class="tag-buff">BUFF</span></span></li>
     </ul>
   </div>
 
@@ -1009,7 +1126,7 @@
           <small style="color:#777">→ Tilt no longer combos into Light 1.</small></li>
       <li>Signature Move: dash cancel removed. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ Signature no longer combos into dash light but resets neutral instead.</small></li>
-      <li>Signature Move: hitstun increased: 20 → 25. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+      <li>Signature Move: hitstun increased by 25%. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
           <small style="color:#777">→ Signature now connects into the Flash Step follow-up on hit, as intended.</small></li>
     </ul>
   </div>
@@ -1020,7 +1137,7 @@
   <div class="cmp cmp-v10">
     <div class="stage-label">[Common]</div>
     <ul class="changes">
-      <li>Dash Light: hitstun increased: 22 → 25. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+      <li>Dash Light: hitstun increased by 14%. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
           <small style="color:#777">→ fixed an issue where Dash Light → Light 1 wouldn't connect.</small></li>
     </ul>
   </div>
@@ -1029,13 +1146,13 @@
     <div class="stage-label">[Common]</div>
     <ul class="changes">
       <li>Dash Light whiff (miss) recovery slightly increased. <span class="tag-nerf">NERF</span></li>
-      <li>Dash Light: hitstun increased: 22 → 25. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+      <li>Dash Light: hitstun increased by 14%. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
           <small style="color:#777">→ Dash Light → Light 1 now connects reliably.</small></li>
     </ul>
 
     <div class="stage-label">[Awakening]</div>
     <ul class="changes">
-      <li>Spiritual Pressure Move 1 (during SP2 Rage): unblockable property removed. <span class="tag-nerf">NERF</span></li>
+      <li>Spiritual Power Move 1 (during SP2 Rage): unblockable property removed. <span class="tag-nerf">NERF</span></li>
     </ul>
   </div>
 
@@ -1068,7 +1185,7 @@
   <div class="cmp cmp-v10">
     <div class="stage-label">[Common]</div>
     <ul class="changes">
-      <li>Signature Move: blockstun reduced: 47 → 35. <span class="tag-nerf">NERF</span><br>
+      <li>Signature Move: blockstun reduced by 26%. <span class="tag-nerf">NERF</span><br>
           <small style="color:#777">→ Signature is now unsafe on block.</small></li>
     </ul>
   </div>
@@ -1081,11 +1198,11 @@
       <li>Heavy Tilt guard stun on Hit 2 increased by 20%. <span class="tag-buff">BUFF</span><br>
           <small style="color:#777">→ Shuhei can now block after it is guarded instead of being punished.</small></li>
       <li>Signature recovery reduced by ~38%, with hit and guard stun increased. <span class="tag-buff">BUFF</span><br>
-          <small style="color:#777">→ no longer punishable on hit. V1.1 tuned its blockstun back down (47 → 35) to keep the advantage on block in check.</small></li>
+          <small style="color:#777">→ no longer punishable on hit. V1.1 tuned its blockstun back down by 26% to keep the advantage on block in check.</small></li>
       <li>Light 3 guard damage reduced by 50%. <span class="tag-nerf">NERF</span></li>
       <li>SP1 (White Fear) Fighting Spirit gain reduced to 0. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
       <li>SP1 (Red Fear) guard damage on Hits 1 and 2 completely removed. <span class="tag-nerf">NERF</span></li>
-      <li>Spiritual Pressure Move 2 startup timestop removed. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
+      <li>Spiritual Power Move 2 startup timestop removed. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span><br>
           <small style="color:#777">→ buffered counters now come out properly instead of eating the opponent's input.</small></li>
     </ul>
 
@@ -1138,6 +1255,204 @@
   <div class="dev-notes">
     <div class="dev-notes-title">Developer's Notes</div>
     A pure quality-of-life change: nothing about Halibel's combo routes or damage moves, but the extra hitstun gives her Tilt → Signature Light link enough leniency to be performed reliably online, especially on bad connections.
+  </div>
+
+  <!-- SHINJI (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/shinji.webp" alt="Shinji Hirako" loading="lazy"></div><div class="char-header-info"><div class="char-name">Shinji Hirako <span class="credit">Changes by Bergen</span> <span class="tag-rework">REWORK</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Light 3: guard stun reduced by 14%, making it minus on block. <span class="tag-nerf">NERF</span></li>
+      <li>Tilt: guard stun reduced by 14%, making it minus on block. <span class="tag-nerf">NERF</span></li>
+    </ul>
+
+    <div class="stage-label">[Awakening — Reworked]</div>
+    <ul class="changes">
+      <li>The Sublimation Kikon move now plays during Awakening instead, dealing 3–4 Konpaku damage and granting Sakanade. In Sublimation the same Kikon plays but deals 4–5 Konpaku damage. <span class="tag-rework">REWORK</span></li>
+      <li>New Sakanade dash light added: plus on block, with a multi-hit property to match Light 3 in Sakanade. <span class="tag-rework">REWORK</span></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Light 3: guard stun reduced by 14%, making it minus on block. <span class="tag-nerf">NERF</span></li>
+      <li>Tilt: guard stun reduced by 14%, making it minus on block. <span class="tag-nerf">NERF</span></li>
+    </ul>
+
+    <div class="stage-label">[Awakening — Reworked]</div>
+    <ul class="changes">
+      <li>The Sublimation Kikon move now plays during Awakening instead, dealing 3–4 Konpaku damage and granting Sakanade. In Sublimation the same Kikon plays but deals 4–5 Konpaku damage. <span class="tag-rework">REWORK</span></li>
+      <li>New Sakanade dash light added: plus on block, with a multi-hit property to match Light 3 in Sakanade. <span class="tag-rework">REWORK</span></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    Shinji's plus-on-block buttons, Light 3 and Tilt, were cheap plus frames that pressured the opponent unfairly, and didn't require much to be performed. In exchange, the Kikon move now fires during Awakening to hand him Sakanade earlier if SP2 wasn't landed yet, and a new plus-on-block Sakanade dash light gives more pressure.
+  </div>
+
+  <!-- SOI FON (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/soifon.webp" alt="Soi Fon" loading="lazy"></div><div class="char-header-info"><div class="char-name">Soi Fon <span class="credit">Changes by Bergen</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Initial Stage]</div>
+    <ul class="changes">
+      <li>Fighting Spirit required to reach Awakening reduced by 29%. <span class="tag-buff">BUFF</span></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Initial Stage]</div>
+    <ul class="changes">
+      <li>Fighting Spirit required to reach Awakening reduced by 29%. <span class="tag-buff">BUFF</span></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    Soi Fon leans on her Awakening for a lot of her strongest tools, so getting there was made noticeably easier. Dropping the Fighting Spirit requirement lets her spend more of the round in the state she is built around.
+  </div>
+
+  <!-- YHWACH (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/yhwach.webp" alt="Yhwach" loading="lazy"></div><div class="char-header-info"><div class="char-name">Yhwach <span class="credit">Changes by Bergen</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Spiritual Power gain adjustments on his Heavies and Lights reverted back to vanilla. <span class="tag-reverted">REVERTED</span></li>
+      <li>Konpaku count reverted to 8. <span class="tag-reverted">REVERTED</span></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li class="reverted-line">Spiritual Power gain nerf/buff on his Heavies and Lights removed. <span class="tag-reverted">REVERTED</span><br>
+          <small style="color:#999">→ V1.0 change rolled back in V1.1 — his Heavy and Light SP gain is back to vanilla.</small></li>
+      <li class="reverted-line">Konpaku count restored to 8. <span class="tag-reverted">REVERTED</span><br>
+          <small style="color:#999">→ V1.0 change rolled back in V1.1 — back to the vanilla count.</small></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    The V1.0 tuning to Yhwach's Spiritual Power gain on his Heavies and Lights, along with his increased Konpaku count, ended up doing more harm than good and promoting a lot more stalling, which is the opposite of this patch's vision. So both have been rolled back to their vanilla values.
+  </div>
+
+  <!-- ICHIBEI (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/ichibei.webp" alt="Ichibei Hyosube" loading="lazy"></div><div class="char-header-info"><div class="char-name">Ichibei Hyosube <span class="credit">Changes by Bergen</span></div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Light 1: guard pushback decreased by 39%. <span class="tag-buff">BUFF</span><br>
+          <small style="color:#777">→ Example: three Light 1s on block can still grab against Uryu, but a fourth Light 1 now whiffs.</small></li>
+      <li>Light 1, Light 2, and Light 3: Spiritual Power regeneration rate increased by 10%. <span class="tag-buff">BUFF</span></li>
+      <li>Sig tilt (counter) can now combo into SP1 if the counter lands. <span class="tag-buff">BUFF</span></li>
+    </ul>
+
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>SP2: unblockable property removed. <span class="tag-rework">REWORK</span><br>
+          <small style="color:#777">→ it can combo into Yellow Reverse, but a Flash Step follow-up will not work and the move can now be blocked.</small></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Light 1: guard pushback decreased by 39%. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ three Light 1s on block can still reach a grab against Uryu, but a fourth Light 1 now whiffs.</small></li>
+      <li>Light 1, Light 2, and Light 3: Spiritual Power regeneration rate increased by 10%. <span class="tag-buff">BUFF</span></li>
+    </ul>
+
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>SP2: unblockable property removed. <span class="tag-nerf">NERF</span><br>
+          <small style="color:#777">→ it can still combo into Yellow Reverse, but a Flash Step follow-up will not work and the move can now be blocked.</small></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    Ichibei's Light 1 pushback is tuned so his blockstring pressure can now more reliably mix-up with it since it's plus. The slightly faster Spiritual Power regeneration on his lights keeps his resource economy healthy, while removing the unblockable property from his Awakening SP2 gives opponents a real answer: it can still be converted into Yellow Reverse, but it can now simply be blocked.
+  </div>
+
+  <!-- SHUNSUI (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/shunsui.webp" alt="Shunsui Kyoraku" loading="lazy"></div><div class="char-header-info"><div class="char-name">Shunsui Kyoraku</div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Damage dealt to an opponent outside the King of the Hill zone (Blue Game Zone) reduced by 35%. <span class="tag-nerf">NERF</span></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+    <div class="stage-label">[Common]</div>
+    <ul class="changes">
+      <li>Damage dealt to an opponent outside the King of the Hill zone (Blue Game Zone) reduced by 35%. <span class="tag-nerf">NERF</span></li>
+    </ul>
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    Shunsui's zone reward was punishing a little too hard. Trimming the bonus damage taken outside the Blue Game Zone by 35% keeps the space still worth fighting over without letting him snowball/get snowballed off a single mistake.
+  </div>
+
+
+  <!-- Izuru Kira (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/Izuru Kira.webp" alt="Izuru Kira" loading="lazy"></div><div class="char-header-info"><div class="char-name">Izuru Kira</div></div></div>
+
+  <div class="cmp cmp-v10">
+
+    <div class="stage-label">[Common]</div>
+      <ul class="changes">
+       <li>Sig (hold variation) hitstun increased<span class="tag-buff">BUFF</span></li>
+       <li>Heavy into sig guard damage reduced<span class="tag-nerf">NERF</span></li>
+       <li>SP2 freeze time reduced<span class="tag-nerf">NERF</span></li>
+          <small style="color:#777">→ This was to fix an issue where Kira could guarantee SP2 with certain setups</small></li>
+    </ul>
+    <div class="stage-label">[Initial Stage]</div>
+      <ul class="changes">
+        <li>Heavy 1 damage increase<span class="tag-buff">BUFF</span></li>
+    </ul>
+    <div class="stage-label">[Awakening]</div>
+      <ul class="changes">
+        <li>Heavy string damage increased<span class="tag-buff">BUFF</span></li>
+       <li>Tilt can now combo into Heavy off a successful counter<span class="tag-buff">BUFF</span></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    Kira had many flaws as a character, such as losing tools whenever he popped evo, lackluster damage, weakness to stalling, and loss of pressure, with these reworks he should be much more solid all around, and have his more unintentional and exploitative tactics toned down.
+(there will be further changes adressing certain other aspects later)
+  </div>
+
+
+  <!-- Mayuri (V1.1) -->
+  <div class="char-header"><div class="char-portrait-wrap"><img src="portraits/Mayuri.webp" alt="Mayuri Kurotsuchi" loading="lazy"></div><div class="char-header-info"><div class="char-name">Mayuri Kurotsuchi</div></div></div>
+
+  <div class="cmp cmp-v10">
+    <div class="stage-label">[Awakening]</div>
+    <ul class="changes">
+      <li>Dash light now has a vacuum effect that allows for better mixup options<span class="tag-buff">BUFF</span></li>
+      <li>Dash light recovery decreased by 9%<span class="tag-nerf">NERF</span></li>
+    </ul>
+  </div>
+
+  <div class="cmp cmp-vanilla">
+  </div>
+
+  <div class="dev-notes">
+    <div class="dev-notes-title">Developer's Notes</div>
+    Mayuri's dash light was a very active button that was very hard to punish, but it also didn't give the proper mix-up that it deserved. This change should allow proper counterplay while making the button stronger.
   </div>
 
 </div>
@@ -1208,20 +1523,20 @@
   <div class="stage-label">[Common]</div>
   <ul class="changes">
     <li>Signature Move: fixed an issue where it could hit an opponent from behind.  <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
-    <li>Spiritual Pressure Move 2: knockback on hit increased. <span class="tag-nerf">NERF</span></li>
-        <small style="color: #777;">→ Yamamoto can no longer combo after landing Spiritual Pressure Move 2.</small></li>
+    <li>Spiritual Power Move 2: knockback on hit increased. <span class="tag-nerf">NERF</span></li>
+        <small style="color: #777;">→ Yamamoto can no longer combo after landing Spiritual Power Move 2.</small></li>
   </ul>
 
   <div class="stage-label">[Awakening]</div>
   <ul class="changes">
     <li>Tilt: Restored Yamamoto's original Special Flash Attack <span class="tag-buff">BUFF</span></li>
     <li>Tilt: Burn meter generation reduced by 25%. <span class="tag-nerf">NERF</span></li>
-    <li>Spiritual Pressure Move 1 (Charged): damage reduced by 25%. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 1 (Charged): damage reduced by 25%. <span class="tag-nerf">NERF</span></li>
   </ul>
 
   <div class="dev-notes">
     <div class="dev-notes-title">Developer's Notes</div>
-    Spiritual Pressure Move 2 is now a strong spacing tool that creates distance, but Yamamoto must use the breathing room wisely rather than immediately following up with a full combo. The SP1 charged damage reduction brings it in line with other strong tools in his kit.
+    Spiritual Power Move 2 is now a strong spacing tool that creates distance, but Yamamoto must use the breathing room wisely rather than immediately following up with a full combo. The SP1 charged damage reduction brings it in line with other strong tools in his kit.
     <br><br>
     <strong>Known Issue:</strong> SP2 can occasionally miss against an opponent who grabs at the same time at very close range. This will be fixed in a future update.
   </div>
@@ -1241,16 +1556,16 @@
   <ul class="changes">
     <li>Fighting Spirit required to go from Awakening to Sublimation increased by 70%. <span class="tag-nerf">NERF</span></li>
     <li>Heavy 2 scaling increased by 15%. <span class="tag-nerf">NERF</span></li>
-    <li>Spiritual Pressure Move 1 (non-White state): damage increased by 15%. <span class="tag-buff">BUFF</span></li>
-    <li>Spiritual Pressure Move 1 (White state): damage reduced by 70%. <span class="tag-nerf">NERF</span></li>
-    <li>Spiritual Pressure Move 1 (White state): projectile speed doubled and travel distance increased by 20%. <span class="tag-buff">BUFF</span></li>
-    <li>Added a new Tilt version of Spiritual Pressure Move 1 while in White state. <span class="tag-buff">BUFF</span></li>
+    <li>Spiritual Power Move 1 (non-White state): damage increased by 15%. <span class="tag-buff">BUFF</span></li>
+    <li>Spiritual Power Move 1 (White state): damage reduced by 70%. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 1 (White state): projectile speed doubled and travel distance increased by 20%. <span class="tag-buff">BUFF</span></li>
+    <li>Added a new Tilt version of Spiritual Power Move 1 while in White state. <span class="tag-buff">BUFF</span></li>
     <li>White Reverse Action can no longer combo into light 1. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
   </ul>
 
   <div class="dev-notes">
     <div class="dev-notes-title">Developer's Notes</div>
-    White state Spiritual Pressure Move 1 was dealing too much raw damage while having too much combo potential and an easy TOD(Touch Of Death), so it has been toned down with some scaling on his heavy 2 that would only affect his loops, but compensated with faster, longer-range projectiles and a new Tilt Spiritual Pressure Move 1 combo route that rewards creative pressure.
+    White state Spiritual Power Move 1 was dealing too much raw damage while having too much combo potential and an easy TOD(Touch Of Death), so it has been toned down with some scaling on his heavy 2 that would only affect his loops, but compensated with faster, longer-range projectiles and a new Tilt Spiritual Power Move 1 combo route that rewards creative pressure.
   </div>
 
   <!-- SOSUKE AIZEN -->
@@ -1261,7 +1576,7 @@
     <li>Flame generation speed cap increased by 50% <span class="tag-buff">BUFF</span></li>
         <small style="color: #777;">→ when standing still for 3 seconds or after landing a sig counter, the max speed of flame regeneration has been increased</small></li>
     <li>Guard gauge drains faster while Escudo is active (~30% faster). <span class="tag-nerf">NERF</span></li>
-    <li>Timestop removed from Spiritual Pressure Move 1 <span class="tag-nerf">NERF</span></li>
+    <li>Timestop removed from Spiritual Power Move 1 <span class="tag-nerf">NERF</span></li>
   </ul>
 
   <div class="stage-label">[Initial Stage]</div>
@@ -1317,7 +1632,7 @@
 
   <div class="stage-label">[Initial Stage]</div>
   <ul class="changes">
-    <li>Spiritual Pressure Move 2: startup increased slightly. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 2: startup increased slightly. <span class="tag-nerf">NERF</span></li>
     <li>Dash Attack blockstun reduced <span class="tag-nerf">NERF</span></li>
     <li>Hakugeki recovery increased by ~7% <span class="tag-nerf">NERF</span></li>
   </ul>
@@ -1325,12 +1640,12 @@
   <div class="stage-label">[Awakening]</div>
   <ul class="changes">
     <li>Dash Attack blockstun reduced <span class="tag-nerf">NERF</span></li>
-    <li>Spiritual Pressure Move 2: startup increased slightly. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 2: startup increased slightly. <span class="tag-nerf">NERF</span></li>
   </ul>
 
   <div class="dev-notes">
     <div class="dev-notes-title">Developer's Notes</div>
-    These changes remove Nnoitra's ability to guarantee his Dash Light into Spiritual Pressure Move 2 as an unblockable setup. He remains plus on block after a Dash Light against all tiers of jabs, preserving his offensive momentum.
+    These changes remove Nnoitra's ability to guarantee his Dash Light into Spiritual Power Move 2 as an unblockable setup. He remains plus on block after a Dash Light against all tiers of jabs, preserving his offensive momentum.
   </div>
 
   <!-- SZAYELAPORRO -->
@@ -1338,7 +1653,7 @@
 
   <div class="stage-label">[Common]</div>
   <ul class="changes">
-    <li>Spiritual Pressure Move 2 recovery increased by 25% <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 2 recovery increased by 25% <span class="tag-nerf">NERF</span></li>
         <small style="color: #777;">→ mitigates timestop shenanigans. </small></li>
     <li>Dash Light guard stun increased and recovery reduced <span class="tag-buff">BUFF</span></li> 
         <small style="color: #777;">→ Dash Light is now safe on block. </small></li>
@@ -1365,12 +1680,12 @@
 
   <div class="stage-label">[Awakening]</div>
   <ul class="changes">
-    <li>Spiritual Pressure Move 2 is now unsafe on block. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 2 is now unsafe on block. <span class="tag-nerf">NERF</span></li>
   </ul>
 
   <div class="dev-notes">
     <div class="dev-notes-title">Developer's Notes</div>
-    Toshiro's Spiritual Pressure Move 2 was performing too many roles simultaneously. it functioned as a reversal, a high-damage tool, an Ice Gauge charger, and a plus-on-block mix-up threat. Adding risk to SP2 on block gives opponents a meaningful response without gutting the move entirely.
+    Toshiro's Spiritual Power Move 2 was performing too many roles simultaneously. it functioned as a reversal, a high-damage tool, an Ice Gauge charger, and a plus-on-block mix-up threat. Adding risk to SP2 on block gives opponents a meaningful response without gutting the move entirely.
   </div>
 
   <!-- SHUNSUI -->
@@ -1383,7 +1698,7 @@
     <li>Light 3 guard damage reduced by ~67%. <span class="tag-nerf">NERF</span></li>
     <li>Heavy 1 guard damage reduced by ~78%. <span class="tag-nerf">NERF</span></li>
     <li>Heavy 2 guard damage reduced by 60%. <span class="tag-nerf">NERF</span></li>
-    <li>Spiritual Pressure Move 2 is now unsafe on block. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 2 is now unsafe on block. <span class="tag-nerf">NERF</span></li>
   </ul>
 
   <div class="stage-label">[Awakening]</div>
@@ -1394,7 +1709,7 @@
 
   <div class="dev-notes">
     <div class="dev-notes-title">Developer's Notes</div>
-    Shunsui remains largely unchanged, but he has lost his ability to consistently force guard breaks. Additionally, his Spiritual Pressure Move 2 was a fast, full-screen whiff punish that dealt high damage while also being safe on block. It was far too rewarding for the amount of risk involved, so it has been adjusted accordingly. In practice, this changes very little for experienced Shunsui players, who were already using SP2 primarily as a whiff punish. Instead, the change discourages throwing the move out recklessly by making it carry meaningful risk when misused.
+    Shunsui remains largely unchanged, but he has lost his ability to consistently force guard breaks. Additionally, his Spiritual Power Move 2 was a fast, full-screen whiff punish that dealt high damage while also being safe on block. It was far too rewarding for the amount of risk involved, so it has been adjusted accordingly. In practice, this changes very little for experienced Shunsui players, who were already using SP2 primarily as a whiff punish. Instead, the change discourages throwing the move out recklessly by making it carry meaningful risk when misused.
   </div>
 
   <!-- DANGAI ICHIGO -->
@@ -1430,7 +1745,7 @@
   <ul class="changes">
     <li>Fighting Spirit required to reach Awakening increased by 20%. <span class="tag-nerf">NERF</span></li>
           <small style="color: #777;">→ This is to bring Nel's awakening time in-line with the rest of the roster, as she previously awakened too quickly. </small></li>
-    <li>Added the ability to use Signature Move immediately after the Spiritual Pressure Move 1 extension. <span class="tag-buff">BUFF</span></li>
+    <li>Added the ability to use Signature Move immediately after the Spiritual Power Move 1 extension. <span class="tag-buff">BUFF</span></li>
     <li>SP1 final hit hitstun significantly reduced <span class="tag-rework">REWORK</span></li> 
         <small style="color: #777;">→ enables dash light oki but removes sig cancel combo extensions</small></li>
     <li>SP1 extension final hit hitstun significantly increased <span class="tag-rework">REWORK</span></li>
@@ -1448,10 +1763,10 @@
   <div class="stage-label">[Common]</div>
   <ul class="changes">
     <li>Yhwach now starts with 9 Stocks. <span class="tag-buff">BUFF</span></li>
-    <li>Spiritual Pressure Move 2 recovery increased by 10% <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 2 recovery increased by 10% <span class="tag-nerf">NERF</span></li>
           <small style="color: #777;">→ mitigates timestop shenanigans. </small></li>
-    <li>Spiritual Pressure regeneration from Light attacks increased by 30% across all forms. <span class="tag-buff">BUFF</span></li>
-    <li>Spiritual Pressure regeneration from Heavy attacks reduced by 20% across all forms. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power regeneration from Light attacks increased by 30% across all forms. <span class="tag-buff">BUFF</span></li>
+    <li>Spiritual Power regeneration from Heavy attacks reduced by 20% across all forms. <span class="tag-nerf">NERF</span></li>
   </ul>
 
   <div class="stage-label">[Initial Stage]</div>
@@ -1495,7 +1810,7 @@
   <ul class="changes">
     <li>Light 1 now tracks the opponent. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
         <small style="color: #777;">→ Yoruichi can punish Flash Steps with Light 1.</small></li>
-    <li>Spiritual Pressure Move 2 timestop removed for consistency across all SP counters. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+    <li>Spiritual Power Move 2 timestop removed for consistency across all SP counters. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
   </ul>
 
   <div class="stage-label">[Awakening]</div>
@@ -1523,7 +1838,7 @@
 
   <div class="stage-label">[Awakening]</div>
   <ul class="changes">
-    <li>Spiritual Pressure Move 1 (during SP2 Rage): unblockable property removed <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 1 (during SP2 Rage): unblockable property removed <span class="tag-nerf">NERF</span></li>
   </ul>
 
   <div class="dev-notes">
@@ -1537,7 +1852,7 @@
   <div class="stage-label">[Common]</div>
   <ul class="changes">
     <li>Fighting Spirit gain from Light 1–3, Heavy 1–2, Tilt, Charged Tilt, Flash Step Follow-up, and Grab all reduced by 20%. <span class="tag-nerf">NERF</span></li>
-    <li>Spiritual Pressure Move 2 is now a DP (Invincible Reversal). <span class="tag-rework">REWORK</span></li>
+    <li>Spiritual Power Move 2 is now a DP (Invincible Reversal). <span class="tag-rework">REWORK</span></li>
           <small style="color: #777;">→ invincible a few frames after activation, strikes from behind, and deals more damage.</small></li>
   </ul>
 
@@ -1586,14 +1901,14 @@
     <li>Signature Move Level 1: guard damage reduced by ~33% and chip damage reduced by 30%, and active duration reduced by 50%. <span class="tag-rework">REWORK</span></li> 
     <li>Signature Move Level 2: guard damage reduced by ~33% and chip damage reduced by 30%, but damage increased by 100% <span class="tag-rework">REWORK</span></li>
     <li>Signature Move Level 3: Chip damage reduced by 30%, and active duration decreased by ~33%.  <span class="tag-rework">REWORK</span></li>
-    <li>Spiritual Pressure Move 2: timestop removed. Guard damage reduced by ~70%, chip damage reduced by 50%. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 2: timestop removed. Guard damage reduced by ~70%, chip damage reduced by 50%. <span class="tag-nerf">NERF</span></li>
     <li>Heavy 1: guard damage reduced by 20%. <span class="tag-nerf">NERF</span></li>
     <li>Heavy 2: guard damage reduced by ~33%. <span class="tag-nerf">NERF</span></li>
   </ul>
 
   <div class="dev-notes">
     <div class="dev-notes-title">Developer's Notes</div>
-  Rangiku's guard-break pressure through Haineko and Spiritual Pressure Move 2 was too consistent and too safe. These changes reduce her chip damage and guard damage while preserving Haineko as a meaningful threat when fully charged. Additionally, her Signature levels have been given more nuance, opening up new optimal combo routes without compromising her overall identity.
+  Rangiku's guard-break pressure through Haineko and Spiritual Power Move 2 was too consistent and too safe. These changes reduce her chip damage and guard damage while preserving Haineko as a meaningful threat when fully charged. Additionally, her Signature levels have been given more nuance, opening up new optimal combo routes without compromising her overall identity.
 
   </div>
 
@@ -1602,11 +1917,11 @@
 
   <div class="stage-label">[Common]</div>
   <ul class="changes">
-    <li>Spiritual Pressure Move 1 timestop on the counter removed <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 1 timestop on the counter removed <span class="tag-nerf">NERF</span></li>
     <li>Fixed a bug where Gin could cancel a Grab Dash into SP2 during its animation. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
     <li>Light 1 now tracks the opponent <span class="tag-buff">BUFF</span></li>
           <small style="color: #777;">→ Gin can punish Flash Steps and Side Steps with Light 1.</small></li>
-    <li>Spiritual Pressure Move 2 is now unsafe on block. Whiff recovery increased. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 2 is now unsafe on block. Whiff recovery increased. <span class="tag-nerf">NERF</span></li>
     <li>Flash Step is now slower and can be consistently punished by opponents. <span class="tag-nerf">NERF</span></li>
   </ul>
 
@@ -1647,7 +1962,7 @@
 
   <div class="stage-label">[Initial Stage & Awakening]</div>
   <ul class="changes">
-    <li>Spiritual Pressure Move 2 timestop removed <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 2 timestop removed <span class="tag-nerf">NERF</span></li>
   </ul>
 
   <div class="stage-label">[Awakening]</div>
@@ -1665,7 +1980,7 @@
           <small style="color: #777;">→ now loses to Tier 3 jabs.</small></li>
     <li>Tilt: no longer plus on block. <span class="tag-nerf">NERF</span></li>
           <small style="color: #777;">→ now trades with Tier 3 jabs.</small></li>
-    <li>Spiritual Pressure Move 2: damage reduced by ~29%. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 2: damage reduced by ~29%. <span class="tag-nerf">NERF</span></li>
   </ul>
 
   <!-- ULQUIORRA -->
@@ -1698,7 +2013,7 @@
   <ul class="changes">
     <li>Light 1: guard damage greatly reduced (~71%), no longer plus on block. <span class="tag-nerf">NERF</span></li>
     <li>Light 3: guard damage reduced by ~67%. <span class="tag-nerf">NERF</span></li>
-    <li>Spiritual Pressure Move 2 timestop removed. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 2 timestop removed. <span class="tag-nerf">NERF</span></li>
     <li>Heavy 2 into Signature: now minus on block. <span class="tag-nerf">NERF</span></li>
           <small style="color: #777;">→ can Flash Step or Step to escape, but cannot mash or grab.</small></li>
   </ul>
@@ -1741,7 +2056,7 @@
     <li>Light 3 (Sword Form): hitstun reduced <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
            <small style="color: #777;">→ removes an unintended infinite loop triggered by Strike Back.</small></li> 
     <li>Hoho Follow-up (Petals Down): removed his ability to continue into SP1 immediately after. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
-    <li>Spiritual Pressure Move 2: timestop removed <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+    <li>Spiritual Power Move 2: timestop removed <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
               <small style="color: #777;">→ this is to prevent the timestop from "munching" inputs from the opponent that would have otherwise activated the counter. </small></li> 
     <li>SP2 counter collision angle improved for more reliable counter hit connections. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
     <li>Byakuya's arrival position after SP2 adjusted for aura purposes. <span class="tag-buff">AURA BUFF</span></li>
@@ -1752,8 +2067,8 @@
     <li>Heavy attack hitbox position moved out. Deadzone increased. Max range slightly increased. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
     <li>Grab: Byakuya's placement after a successful grab adjusted. <span class="tag-fix">FIX</span></li>
           <small style="color: #777;">→ grab placement adjusted so heavy can still combo after above change. </small></li> 
-    <li>Spiritual Pressure Move 1: reverse regeneration removed from the second portion of the attack. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
-    <li>Spiritual Pressure Move 2: timestop removed. Hitbox on the damage portion slightly expanded to reduce janky interactions. Counter hit improved. Arrival position adjusted. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+    <li>Spiritual Power Move 1: reverse regeneration removed from the second portion of the attack. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
+    <li>Spiritual Power Move 2: timestop removed. Hitbox on the damage portion slightly expanded to reduce janky interactions. Counter hit improved. Arrival position adjusted. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
     <li>Hakugeki (Down and Up variants): movement distance increased <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
           <small style="color: #777;">→ the in-combo Hakugeki now connects correctly.</small></li> 
   </ul>
@@ -1775,9 +2090,9 @@
 
   <div class="stage-label">[Awakening]</div>
   <ul class="changes">
-    <li>Spiritual Pressure Move 1: hitstun greatly reduced. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 1: hitstun greatly reduced. <span class="tag-nerf">NERF</span></li>
         <small style="color: #777;">→ Ankenless SP1 loops are no longer possible. </small></li> 
-    <li>Spiritual Pressure Move 1: damage scaling increased. <span class="tag-nerf">NERF</span></li>
+    <li>Spiritual Power Move 1: damage scaling increased. <span class="tag-nerf">NERF</span></li>
     <li>Flash Step: now slower and consistently punishable by opponents. <span class="tag-nerf">NERF</span></li>
   </ul>
 
@@ -1818,7 +2133,7 @@
     <li>Light 3 guard damage reduced by 50%. <span class="tag-nerf">NERF</span></li>
     <li>SP1 (White Fear) Fighting Spirit gain reduced to 0. <span class="tag-fix-nerf"><span class="half-l">FIX</span><span class="half-r">NERF</span></span></li>
     <li>SP1 (Red Fear) guard damage on Hits 1 and 2 completely removed. <span class="tag-nerf">NERF</span></li>
-    <li>Spiritual Pressure Move 2 startup timestop removed. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
+    <li>Spiritual Power Move 2 startup timestop removed. <span class="tag-fix-buff"><span class="half-l">FIX</span><span class="half-r">BUFF</span></span></li>
         <small style="color: #777;">→ Buffered counters now come out properly instead of eating the opponent's input.</small></li>
   </ul>
 
