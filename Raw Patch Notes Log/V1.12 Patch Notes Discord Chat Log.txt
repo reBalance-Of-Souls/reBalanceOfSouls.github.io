@@ -1,0 +1,290 @@
+This is the start of the #files-august-3-patch private channel. 
+Nilslop [SDTC],  — 17/07/2026, 09:30
+drop the files to be playtested for the july 26th balance patch
+Nela Mela — 17/07/2026, 13:09
+Forwarded
+Kisuke:
+
+SP2 Forward Heavy (Byakurai) no longer re-tracks on side-step/back-dash.
+The beam now disengages before Kisuke's movement options become
+available, instead of staying live through them. Allows opponent to side-step and raw hoho during the beam's duration.
+
+SP2-enhanced light attack (3rd hit) reiryoku gain roughly halved,
+in both Base and Evo. It was generating double the reiryoku
+of the base version; brought down to match the game's one other
+comparable "enhanced state" mechanic (Unohana). Done to prevent constant SP2 rotation.
+Attachment file type: unknown
+pl006.tadjpkg
+768.42 KB
+#accepted-files-drop-zone  •  16/07/2026
+bergentrückung — 19/07/2026, 20:33
+Uryu Changes:
+Fixed SP2 punishing minus but safe moves (like ichibei's tilt)
+Reduced Fighting spirit gain on fully charged sig/sp2 install sig by 40%
+Attachment file type: unknown
+pl003.tadjpkg
+2.10 MB
+Nela Mela — 20/07/2026, 15:44
+Soi Changes:
+Jab recovery and blockstun increased to match Yoruichi - making her punishable on whiffing
+Attachment file type: unknown
+pl017.tadjpkg
+1.24 MB
+Hali Changes:
+Damage in Aura Guage increased by 7% across the board: letting her hit confirms feel more rewarding to compensate for her harder neutral
+Attachment file type: unknown
+pl035.tadjpkg
+783.21 KB
+Nilslop [SDTC],  — 23/07/2026, 08:26
+Forwarded
+ STARRK
+   Evo: Upped damage of the following
+       Wolf powered heavy
+       Wolf powered grab
+       Wolf powered hoho follow up
+   
+Kikon rotation changed from 5-6 to 4-5 once evo is popped
+and from 2-3 to 3-4 once weakened  
+#changelog-dev-build  •  23/07/2026
+ [SDTC], 
+RedZekrom913 — 24/07/2026, 03:24
+Attachment file type: unknown
+pl033_modded.tadjpkg
+812.81 KB
+Trono — 24/07/2026, 03:39
+My work on Ichibei : 
+Light SP1 can combo in awakening
+Heavy SP1 has improved damage (~ +8% in base and ~ +12% in awakening form compared to the hakugeki + follow shunpo)
+Tilt can combo with light no matter the range in awakening (no change in base) and combo with heavy at max range
+The counter does not combo anymore
+
+
+Old value for Heavy SP1 damage : 
+Base : Heavy + SP1 : 3113 (3376 inked lvl 0)
+Awakening : Heavy + SP1 :  4734 (5205 inked lvl 0 / 6944 inked lvl 4)
+
+New value for Heavy SP1 damage : 
+Base : Heavy + SP1 : 3613 (3903 inked lvl 0) 
+Awakening : Heavy + SP1 : 5150 (5663 inked lvl 0 / 7540 inked lvl 4) 
+Attachment file type: unknown
+pl050.tcmbpkg
+106.08 KB
+Attachment file type: unknown
+pl050_modded.tadjpkg
+909.65 KB
+Nela Mela — 24/07/2026, 04:10
+Pushing back to August 2nd?
+Nilslop [SDTC],  — 24/07/2026, 04:12
+it was too late to announce the series so we had to delay it for 1 week
+Nela Mela — 24/07/2026, 04:12
+Ah no worries
+Nilslop [SDTC],  — 24/07/2026, 04:12
+it will be announced this week end
+Nela Mela — 24/07/2026, 04:12
+Good to know
+:4WeirdBusiness:
+Nela Mela — 26/07/2026, 03:47
+Soi Changes:
+Jab recovery and blockstun increased to match Yoruichi - making her punishable on whiff - Mela
+Raw Hoho recovery timing retuned for consistent punishing - Trono
+ 
+Attachment file type: unknown
+pl017.tadjpkg
+1.24 MB
+Ulq Changes:
+Raw Hoho recovery timing retuned for consistent punishing - Trono
+Attachment file type: unknown
+pl036.tadjpkg
+623.11 KB
+Trono — 31/07/2026, 11:31
+Here is the final version of Ichibei
+Same changes except that now the light SP1 can only combo once (thank you @bergentrückung for fixing this ! And also thank you @Nilslop for herlping me when i ask you some questions ❤️ 🇫🇷 ) 
+Attachment file type: unknown
+pl050.tadjpkg
+1.03 MB
+Attachment file type: unknown
+pl050.tcmbpkg
+114.09 KB
+Nela Mela — Yesterday at 06:53
+The Giant Last-Minute Komamura Upload
+ Komamura 01-08-26 
+====================
+
+--- BASE ---
+
+Light 1
+ guard_move_joint_rate: 0.2 → 0.6
+"Added pushback on block to prevent jab 1 jail"
+
+Heavy 1
+ Startup: 17 → 16
+"Sped up heavy to be in-line with Dangai's. Allows Komamura to utilize space trapping more consistently. Will monitor"
+
+Tilt (Forward Heavy)
+ SuperArmor: 8→22 → 8→41
+"Extended his Tilt's armor throughout the move's active frames so he can't be mashed out of it. Will monitor."
+
+
+SP1
+ CancelTiming: 118 → 128
+ Damage: 700/450/450 → 1400/900/900
+ Guaranteed: 210/125/125 → 368/236/236
+"Reinforced the move's identity as an armored wake-up option and potential whiff punishing tool. Unsafe on-block. Upgraded damage to compensate."
+
+Signature — Activation
+ CancelTiming: 54 → 84
+
+Signature — Neutral Zoning
+ guard_fix_time: 30/30/40 → 24/24/32
+
+Signature — Heavy Ender
+ Damage: 2200 → 2500 | Guaranteed: 660 → 740
+
+Signature — Forward Heavy Ender
+ damage_move_rate (hit 1): 3.0 → 0.3
+ Damage: 600/600 → 1000/1000
+"Signature's utility is shifting to its combo usage instead of zoning and playing keep-away. These changes incentivize Komamura to engage as charging his signature in neutral now carries real risk in its extended recovery."
+
+--- BANKAI ---
+
+Transition to Weakened
+ Added NonInput: 0 → 102
+ Added Protect: 0 → 102 (完全無敵)
+"Prevents a bug that allowed inputs made during the transitional cutscene of Bankai - Weakened State to be made active, making Komamura unsafe. These changes are implemented to make the transition fully reset to neutral aligning with every other transformation."
+
+--- WEAKENED ---
+
+Health  (CharaStatus.fsv)
+ rev_max_reishi: 9500 → 15000
+"Komamura's health in weakened was only 1500 more than Vasto Lorde. Upgraded to fit in line with other character's health this late into the match."
+
+Tilt (Forward Heavy)
+ SuperArmor: 8→22 → 8→41
+"Made consistent with his Base Tilt armor fix."
+
+Signature
+ Active: 40→50 → 40→54
+ ComboStart: 50→70 → 54→82
+ CancelTiming: 70 → 82
+"Made his Signature slightly riskier to spam in neutral while compensating with more active frames."
+
+SP1
+ Damage: 500/300/300 → 1225/788/788
+ Guaranteed: 150/90/90 → 322/207/207
+ hit_atk_gr: 0 → 1
+"Upgraded SP1 by 87.5% to fit in-line with his base changes but still keep the weakened motif. Fixed the bugged grab interaction."
+Attachment file type: unknown
+pl023.tadjpkg
+524.13 KB
+(The health changes require edits to the charastatus.fsv which I don't have access to on the dev build 🙃 )
+Nela Mela — Yesterday at 07:15
+Bonus Aizen changes!!
+Aizen 01-08-26 
+====================
+
+--- MOVEMENT (all forms) ---
+
+Run speed  (CharaStatus.fsv)
+ run_speed: 0.02 → 0.04
+ evo_run_speed: 0.0225 → 0.0400
+ rev_run_speed: 0.0225 → 0.0400
+"Matches Byakuya's walk/run speed, changed to make movement with Aizen feel more responsive."
+
+Sidestep (pl020.tadjpkg)
+ CancelTiming: 46 → 38 (left and right)
+"Opens more defensive/offensive options in certain circumstances and allows Aizen to capitalize on them."
+
+--- DASH LIGHT ---
+
+Range
+ StepDashAddMove total_length: 0.2/0.6/1.0/0.2 → 0.15/0.45/0.75/0.15
+ Total travel 2.0 → 1.5 units.
+"Reduced the range to mitigate Dash Light's telegraphing. Adjusted to make it a more feasible aggressive option. Still steppable."
+
+--- KYŌKA SUIGETSU (kill denial) ---
+
+ct_reset / ct_reset_cos1
+ Added NonInput: 0 → 700
+ Added Protect: 0 → 700 (完全無敵)
+"Prevents Aizen from being stuck and punishable after the activation of his Kyoka Suigetsu, making it a viable option for its expensive investment."
+Attachment file type: unknown
+pl020.tadjpkg
+1.12 MB
+Nilslop [SDTC],  — 13:24
+Forwarded
+@Balance Team 
+Gin changes : 
+  Evo : 
+    dash light : recovery increased by 5 frames
+    backdash : recovery increased by 8 frames
+    light 2 : blockstun decreased by 2 frames
+    sig (lvl1) : recovery reverted to it's state before the nerf (huge recovery still nerf still applies to sig (lvl2 and 3)
+    fighting spirit from evo-sub : 3->3.75
+#changelog-dev-build  •  Wednesday
+File is on the dev build
+Forwarded
+@Balance Team 
+Byakuya (pl022) 19-07-26
+========================
+101 2_evo_attack_evo_atk_hi01 <<Evo Petals Heavy 1>>
+    reiryoku_base        
+    1.0 -> 0.4        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+    reiryoku_base        
+    1.0 -> 0.4        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+
+107 2_evo_attack_evo_atk_lo01 <<Evo Petals Light 1>>
+    reiryoku_base
+    0.4 -> 0.1        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+    reiryoku_base
+    0.4 -> 0.1        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+
+108 2_evo_attack_evo_atk_lo02 <<Evo Petals Light 2>>
+    reiryoku_base
+    0.5 -> 0.2        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+    reiryoku_base
+    0.5 -> 0.2        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+    reiryoku_base
+    0.5 -> 0.2        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+    reiryoku_base
+    0.1 -> 0.04        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+    reiryoku_base
+    0.1 -> 0.04        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+    reiryoku_base
+    0.15 -> 0.06        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+
+109 2_evo_attack_evo_atk_lo03 <<Evo Petals Light 3>>
+    reiryoku_base
+    0.5 -> 0.2        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+    reiryoku_base
+    0.5 -> 0.2        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+    reiryoku_base
+    0.5 -> 0.2        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+    reiryoku_base
+    0.5 -> 0.2        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+    reiryoku_base
+    1.0 -> 0.4        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+    reiryoku_base
+    0.1 -> 0.04        (reduced SP gain values to 40% of previous dev build / 20% of vanilla)
+
+113 2_evo_attack_evo_atk_lo05 <<Evo Sword light 2>>
+    fighting_base
+    0.01 -> 0.04        (Replicates fighting spirit gain from petals)
+
+114 2_evo_attack_evo_atk_lo06 <<Evo Sword light 3>>
+    fighting_base
+    0.01 -> 0.025        (Replicates fighting spirit gain from petals)
+#changelog-dev-build  •  20/07/2026
+(just put decreased sp generation while in pétals form)
+Forwarded
+@Balance Team 
+Byakuya changes :
+  Evo : 
+    SP1 (sword form) : 
+    minimum damage from all hits (9 hits in total) : 50 ->60
+#changelog-dev-build  •  Wednesday
+Forwarded
+@Balance Team 
+Byakuya change : 
+  Evo : 
+    SP1 (petals) : 
+        only change into petals form on hit
