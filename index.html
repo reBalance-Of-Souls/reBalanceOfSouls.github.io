@@ -62,10 +62,6 @@
     pointer-events: none;
     border: 0;
   }
-  /* Visitors who ask for less motion keep the still poster instead. */
-  @media (prefers-reduced-motion: reduce) {
-    .hero > video.hero-bg { display: none; }
-  }
   /* Dark overlay so hero text stays readable over the animation */
   .hero::after {
     content: "";

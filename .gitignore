@@ -1,0 +1,7 @@
+# Local-only archives and safety copies — never publish these.
+# The original 43.6 MB hero GIF is preserved forever in git history
+# (commit 5bf2eed) and can be restored any time with:
+#   git show 5bf2eed:BleachIntroVideoGif.gif > BleachIntroVideoGif.gif
+originals/
+_to_delete/
+index.html.backup-*
