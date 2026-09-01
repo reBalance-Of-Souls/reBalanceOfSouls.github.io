@@ -1,0 +1,46 @@
+{
+  "_readme": [
+    "The launcher's front page. Commit a change here and players see it on",
+    "their next launch -- no release, no rebuild, no token.",
+    "",
+    "Read from:",
+    "  https://raw.githubusercontent.com/reBalance-Of-Souls/reBalanceOfSouls.github.io/main/news.json",
+    "",
+    "Each item needs a title. image, link and kind are optional:",
+    "  title  the caption under the art. Keep it to one line.",
+    "  image  full URL to the artwork. Use PNG -- Windows decodes anything,",
+    "         but the Linux build needs PNG, so PNG keeps one file working",
+    "         on both. Committing art next to this file is fine.",
+    "  link   opened in the player's browser when they click the item.",
+    "  kind   news | changelog | shoutout. Free text; anything unknown is",
+    "         still shown rather than dropped.",
+    "",
+    "Items appear in the order written -- first is shown first.",
+    "Keys starting with _ are ignored by the launcher, including this one.",
+    "",
+    "If this file is ever broken, the launcher refuses it by name and falls",
+    "back to the last copy that parsed, so a bad edit will not blank the",
+    "front page. A single malformed item is skipped and the rest still show.",
+    "Bump schema only if the launcher's own format changes -- not for content."
+  ],
+
+  "schema": 1,
+
+  "items": [
+    {
+      "title": "PLC 1 - White, launches tomorrow!",
+      "image": "https://raw.githubusercontent.com/reBalance-Of-Souls/reBalanceOfSouls.github.io/main/itch-cover.png",
+      "link": "https://rebalanceofsouls.com/",
+      "kind": "news"
+    },
+    {
+      "title": "Balance pass - Byakuya's stance gauge, flash step and Hoho fixes",
+      "link": "https://rebalanceofsouls.com/",
+      "kind": "changelog"
+    },
+    {
+      "title": "Launcher redesign by Joji - thank you",
+      "kind": "shoutout"
+    }
+  ]
+}
