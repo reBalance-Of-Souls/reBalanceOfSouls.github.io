@@ -21,26 +21,39 @@
     "If this file is ever broken, the launcher refuses it by name and falls",
     "back to the last copy that parsed, so a bad edit will not blank the",
     "front page. A single malformed item is skipped and the rest still show.",
-    "Bump schema only if the launcher's own format changes -- not for content."
+    "Bump schema only if the launcher's own format changes -- not for content.",
+    "",
+    "The YouTube images below are that video's own thumbnail. maxresdefault",
+    "is the 1280x720 one, which is the size the front page wants; if a video",
+    "has no maxres upload the URL 404s and the item simply shows with no art.",
+    "Swap in art of your own whenever you have it."
   ],
 
   "schema": 1,
 
   "items": [
     {
-      "title": "PLC 1 - White, launches tomorrow!",
-      "image": "https://raw.githubusercontent.com/reBalance-Of-Souls/reBalanceOfSouls.github.io/main/itch-cover.png",
-      "link": "https://rebalanceofsouls.com/",
+      "title": "Zangetsu Character Reveal Trailer",
+      "image": "https://img.youtube.com/vi/an3gd0ZGFWM/maxresdefault.jpg",
+      "link": "https://www.youtube.com/watch?v=an3gd0ZGFWM",
       "kind": "news"
     },
     {
-      "title": "Balance pass - Byakuya's stance gauge, flash step and Hoho fixes",
-      "link": "https://rebalanceofsouls.com/",
-      "kind": "changelog"
+      "title": "EU Circuit - Tournament #03",
+      "image": "https://img.youtube.com/vi/x_Wpgw-cZak/maxresdefault.jpg",
+      "link": "https://youtu.be/x_Wpgw-cZak",
+      "kind": "news"
     },
     {
-      "title": "Launcher redesign by Joji - thank you",
-      "kind": "shoutout"
+      "title": "NA Circuit - Tournament #03",
+      "image": "https://img.youtube.com/vi/WKnXXNTTSwM/maxresdefault.jpg",
+      "link": "https://youtu.be/WKnXXNTTSwM",
+      "kind": "news"
+    },
+    {
+      "title": "Latest Changelog",
+      "link": "https://eclipseworks.org/",
+      "kind": "changelog"
     }
   ]
 }
