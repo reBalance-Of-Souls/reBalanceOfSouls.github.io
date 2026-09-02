@@ -70,6 +70,7 @@
     },
     {
       "title": "Latest Changelog",
+      "image": "news/changelog-v1.1.2.png",
       "link": "https://eclipseworks.org/",
       "kind": "changelog"
     }
